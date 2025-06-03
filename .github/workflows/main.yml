@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install feedgenerator feedparser playwright requests
+        pip install feedgenerator feedparser requests beautifulsoup4 playwright
         playwright install firefox
 
     - name: Run scraper
