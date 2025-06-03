@@ -1,34 +1,34 @@
 name: Social Feed Scraper
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'  # Runs every 30 minutes
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  # runs every hour
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v3
+      - name: Check out repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Install dependencies
-      run: pip install requests beautifulsoup4
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-    - name: Run scraper
-      run: python scraper.py
+      - name: Run scraper
+        run: python scraper.py
 
-    - name: Commit and push RSS feed
-      run: |
-        git config user.name "rss-bot"
-        git config user.email "rss@example.com"
-        git pull --rebase origin main
-        git add social_feed.xml
-        git commit -m "Update social feed" || echo "No changes to commit"
-        git push
+      - name: Commit and push RSS feed
+        run: |
+          git config user.name "rss-bot"
+          git config user.email "rss-bot@example.com"
+          git add social_feed.xml
+          git commit -m "Update social feed" || echo "No changes to commit"
+          git pull --rebase
+          git push
