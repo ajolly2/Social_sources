@@ -1,140 +1,107 @@
 
-import feedgenerator
-from datetime import datetime
-from difflib import SequenceMatcher
-from playwright.sync_api import sync_playwright
-import time
 import csv
 import requests
-from io import StringIO
 import feedparser
+from feedgenerator import Rss201rev2Feed
 from bs4 import BeautifulSoup
+import datetime
 
-CSV_TABS = {
-    "X": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=0&single=true&output=csv",
-    "Reddit": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1893373667&single=true&output=csv"
+# CSV URLs per platform
+CSV_URLS = {
+    'X': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=0&single=true&output=csv',
+    'Reddit': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1893373667&single=true&output=csv'
 }
 
-def fetch_all_sources():
-    all_sources = []
-    for platform, url in CSV_TABS.items():
-        try:
-            resp = requests.get(url)
-            data = resp.text
-            reader = csv.DictReader(StringIO(data))
-            for row in reader:
-                if row.get('platform') and row.get('account') and row.get('url'):
-                    all_sources.append({
-                        "platform": row["platform"].strip(),
-                        "account": row["account"].strip(),
-                        "url": row["url"].strip()
-                    })
-        except Exception as e:
-            print(f"Failed to fetch {platform}: {e}")
-    return all_sources
+def fetch_accounts(platform):
+    response = requests.get(CSV_URLS[platform])
+    lines = response.text.strip().split("\n")[1:]  # skip header
+    return [line.split(',')[2].strip() for line in lines if len(line.split(',')) > 2]
 
-def scrape_x_profile(page, username):
-    tweets = []
-    url = f"https://x.com/{username}"
-    page.goto(url, timeout=60000)
-    time.sleep(5)
-    articles = page.query_selector_all("article")
-    for article in articles[:10]:
+def extract_image_x(url):
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        html = requests.get(url, headers=headers, timeout=10).text
+        soup = BeautifulSoup(html, 'html.parser')
+        images = soup.find_all('img')
+        for img in images:
+            src = img.get('src', '')
+            if 'pbs.twimg.com/media' in src and not 'profile_images' in src:
+                return src
+    except Exception:
+        return ''
+    return ''
+
+def extract_image_reddit(entry):
+    if 'media_content' in entry and entry.media_content:
+        return entry.media_content[0]['url']
+    if 'media_thumbnail' in entry and entry.media_thumbnail:
+        return entry.media_thumbnail[0]['url']
+    soup = BeautifulSoup(entry.get('summary', ''), 'html.parser')
+    img = soup.find('img')
+    return img['src'] if img and 'src' in img.attrs else ''
+
+def parse_x():
+    items = []
+    for url in fetch_accounts('X'):
         try:
-            content_el = article.query_selector("div[lang]")
-            content = content_el.inner_text() if content_el else ""
-            timestamp_el = article.query_selector("time")
-            timestamp = timestamp_el.get_attribute("datetime") if timestamp_el else datetime.utcnow().isoformat()
-            link_el = article.query_selector("a[role=link]")
-            link = link_el.get_attribute("href") if link_el else f"/{username}"
-            img_el = article.query_selector("img")
-            img_url = img_el.get_attribute("src") if img_el else None
-            tweets.append({
-                "user": username,
-                "content": content.strip(),
-                "url": "https://x.com" + link,
-                "date": datetime.fromisoformat(timestamp.replace("Z", "")) if timestamp else datetime.utcnow(),
-                "image": img_url
+            resp = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}, timeout=10)
+            soup = BeautifulSoup(resp.text, 'html.parser')
+            title_tag = soup.find('title')
+            title = title_tag.text if title_tag else url
+            post_url = url
+            image = extract_image_x(url)
+            now = datetime.datetime.utcnow()
+            items.append({
+                'title': f"@@{title}:",
+                'link': post_url,
+                'description': f"<br/><img src='{image}'/>" if image else '',
+                'pubdate': now
             })
-        except Exception as e:
+        except Exception:
             continue
-    return tweets
+    return items
 
-def parse_reddit_rss(url):
-    posts = []
-    feed = feedparser.parse(url + ".rss")
-    for entry in feed.entries[:10]:
-        image_url = None
-        if 'media_content' in entry and entry.media_content:
-            image_url = entry.media_content[0].get('url')
-        elif 'summary' in entry:
-            soup = BeautifulSoup(entry.summary, 'html.parser')
-            img_tag = soup.find("img")
-            if img_tag:
-                image_url = img_tag.get("src")
+def parse_reddit():
+    items = []
+    for url in fetch_accounts('Reddit'):
+        d = feedparser.parse(url)
+        for entry in d.entries:
+            image = extract_image_reddit(entry)
+            items.append({
+                'title': f"@@reddit/{entry.get('author', 'unknown')}: {entry.title}",
+                'link': entry.link,
+                'description': f"{entry.summary}<br/><img src='{image}'/>" if image else entry.summary,
+                'pubdate': datetime.datetime(*entry.published_parsed[:6]) if 'published_parsed' in entry else datetime.datetime.utcnow()
+            })
+    return items
 
-        posts.append({
-            "user": url.split("/")[-2],
-            "content": entry.title,
-            "url": entry.link,
-            "date": datetime(*entry.published_parsed[:6]),
-            "image": image_url
-        })
-    return posts
-
-def is_similar(a, b):
-    return SequenceMatcher(None, a, b).ratio() >= 0.75
-
-def remove_duplicates(items):
-    unique = []
-    for item in items:
-        if not any(is_similar(item["content"], other["content"]) for other in unique):
-            unique.append(item)
-    return unique
-
-def main():
-    sources = fetch_all_sources()
-    x_accounts = [s['account'] for s in sources if s['platform'].lower() == 'x']
-    reddit_urls = [s['url'] for s in sources if s['platform'].lower() == 'reddit']
-
-    all_posts = []
-
-    with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True)
-        page = browser.new_page()
-        for account in x_accounts:
-            print(f"Scraping X @{account}")
-            all_posts += scrape_x_profile(page, account)
-        browser.close()
-
-    for url in reddit_urls:
-        print(f"Fetching Reddit feed: {url}")
-        all_posts += parse_reddit_rss(url)
-
-    all_posts.sort(key=lambda x: x["date"], reverse=True)
-    filtered = remove_duplicates(all_posts)
-
-    feed = feedgenerator.Rss201rev2Feed(
-        title="Aggregated Social Sports Feed",
-        link="https://yourdomain.com/rss",
-        description="Combined posts from X.com + Reddit with images",
+def generate_rss(items, filename="social_feed.xml"):
+    feed = Rss201rev2Feed(
+        title="THPORTH Social Feed",
+        link="https://thporth.com/",
+        description="Aggregated social posts from multiple platforms",
         language="en"
     )
-
-    for post in filtered:
-        description = f"{post['content']}"
-        if post.get("image"):
-            description += f'<br><img src="{post["image"]}" width="300"/>'
-
+    items.sort(key=lambda x: x['pubdate'], reverse=True)
+    seen = set()
+    for item in items:
+        key = item['title'] + item['description']
+        if any(similarity(key, s) >= 0.75 for s in seen):
+            continue
+        seen.add(key)
         feed.add_item(
-            title=f"@{post['user']}: {post['content'][:50]}...",
-            link=post["url"],
-            description=description,
-            pubdate=post["date"]
+            title=item['title'],
+            link=item['link'],
+            description=item['description'],
+            pubdate=item['pubdate']
         )
+    with open(filename, 'w', encoding='utf-8') as f:
+        feed.write(f, 'utf-8')
 
-    with open("social_feed.xml", "w", encoding="utf-8") as f:
-        feed.write(f, "utf-8")
+def similarity(a, b):
+    from difflib import SequenceMatcher
+    return SequenceMatcher(None, a, b).ratio()
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    all_items = parse_x() + parse_reddit()
+    generate_rss(all_items)
