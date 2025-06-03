@@ -18,7 +18,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install feedgenerator feedparser playwright
+        pip install feedgenerator feedparser playwright requests
         playwright install firefox
 
     - name: Run scraper
@@ -29,5 +29,5 @@ jobs:
         git config user.name "rss-bot"
         git config user.email "rss-bot@example.com"
         git add social_feed.xml
-        git commit -m "Update social feed"
+        git commit -m "Update social feed" || echo "No changes to commit"
         git push
