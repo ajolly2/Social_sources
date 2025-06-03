@@ -1,3 +1,4 @@
+
 import feedgenerator
 from datetime import datetime
 from difflib import SequenceMatcher
@@ -7,13 +8,11 @@ import csv
 import requests
 from io import StringIO
 import feedparser
+from bs4 import BeautifulSoup
 
 CSV_TABS = {
     "X": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=0&single=true&output=csv",
-    "Reddit": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1893373667&single=true&output=csv",
-    "Instagram": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=132310951&single=true&output=csv",
-    "TikTok": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1615836936&single=true&output=csv",
-    "Snapchat": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1149773381&single=true&output=csv"
+    "Reddit": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1893373667&single=true&output=csv"
 }
 
 def fetch_all_sources():
@@ -39,21 +38,25 @@ def scrape_x_profile(page, username):
     url = f"https://x.com/{username}"
     page.goto(url, timeout=60000)
     time.sleep(5)
-    elements = page.query_selector_all("article div[lang]")
-    for el in elements[:10]:
+    articles = page.query_selector_all("article")
+    for article in articles[:10]:
         try:
-            content = el.inner_text()
-            timestamp_el = el.evaluate_handle("node => node.closest('article').querySelector('time')")
-            timestamp = timestamp_el.get_property("dateTime").json_value() if timestamp_el else datetime.utcnow().isoformat()
-            link_el = el.evaluate_handle("node => node.closest('article').querySelector('a[role=link]')")
-            link = link_el.get_property("href").json_value() if link_el else url
+            content_el = article.query_selector("div[lang]")
+            content = content_el.inner_text() if content_el else ""
+            timestamp_el = article.query_selector("time")
+            timestamp = timestamp_el.get_attribute("datetime") if timestamp_el else datetime.utcnow().isoformat()
+            link_el = article.query_selector("a[role=link]")
+            link = link_el.get_attribute("href") if link_el else f"/{username}"
+            img_el = article.query_selector("img")
+            img_url = img_el.get_attribute("src") if img_el else None
             tweets.append({
                 "user": username,
                 "content": content.strip(),
                 "url": "https://x.com" + link,
-                "date": datetime.fromisoformat(timestamp.replace("Z", "")) if timestamp else datetime.utcnow()
+                "date": datetime.fromisoformat(timestamp.replace("Z", "")) if timestamp else datetime.utcnow(),
+                "image": img_url
             })
-        except:
+        except Exception as e:
             continue
     return tweets
 
@@ -61,11 +64,21 @@ def parse_reddit_rss(url):
     posts = []
     feed = feedparser.parse(url + ".rss")
     for entry in feed.entries[:10]:
+        image_url = None
+        if 'media_content' in entry and entry.media_content:
+            image_url = entry.media_content[0].get('url')
+        elif 'summary' in entry:
+            soup = BeautifulSoup(entry.summary, 'html.parser')
+            img_tag = soup.find("img")
+            if img_tag:
+                image_url = img_tag.get("src")
+
         posts.append({
             "user": url.split("/")[-2],
             "content": entry.title,
             "url": entry.link,
-            "date": datetime(*entry.published_parsed[:6])
+            "date": datetime(*entry.published_parsed[:6]),
+            "image": image_url
         })
     return posts
 
@@ -104,15 +117,19 @@ def main():
     feed = feedgenerator.Rss201rev2Feed(
         title="Aggregated Social Sports Feed",
         link="https://yourdomain.com/rss",
-        description="Combined posts from X.com + Reddit",
+        description="Combined posts from X.com + Reddit with images",
         language="en"
     )
 
     for post in filtered:
+        description = f"{post['content']}"
+        if post.get("image"):
+            description += f'<br><img src="{post["image"]}" width="300"/>'
+
         feed.add_item(
             title=f"@{post['user']}: {post['content'][:50]}...",
             link=post["url"],
-            description=post["content"],
+            description=description,
             pubdate=post["date"]
         )
 
