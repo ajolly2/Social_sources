@@ -7,39 +7,29 @@ from feedgenerator import Rss201rev2Feed
 
 # ─── CONFIGURATION ──────────────────────────────────────────────────────────────
 
-# 1) List of X.com handles (without '@') you want to scrape.
-#    E.g. "MLB", "ESPN", "NBCSports", "SBNation", etc.
-#    Add or remove handles here as needed.
+# List of X.com handles (without '@'):
 ACCOUNTS = [
     "MLB",
     "ESPN",
     "NBCSports",
     "SBNation",
-    "BleacherReport",
-    "FOXSports",
-    "BBCSport",
-    "SportsCenter",
-    "YahooSports",
-    # …you can extend this list at any time…
+    # add/remove handles here as desired
 ]
 
-# 2) How many tweets to fetch per account (max). Nitter HTML shows a timeline;
-#    we will scrape up to this many tweets on each run.
+# How many tweets to fetch per account (max):
 TWEETS_PER_ACCOUNT = 5
 
-# 3) Small list of public Nitter mirrors to rotate through, to reduce 429s.
-#    If one mirror returns a 429, we try the next. If *all* mirrors 429, skip that account.
+# Public Nitter mirrors to rotate through:
 NITTER_MIRRORS = [
     "https://nitter.net",
     "https://nitter.snopyta.org",
     "https://nitter.42l.fr"
 ]
 
-# 4) How many seconds to sleep between each Nitter request.
-#    (Keeps us under the mirror’s rate limits.)
+# Seconds to sleep between each mirror request:
 DELAY_BETWEEN_REQUESTS = 2.0
 
-# 5) Output RSS filename (will live in repo root).
+# Output RSS filename:
 OUTPUT_RSS_FILE = "social_feed.xml"
 
 
@@ -47,35 +37,41 @@ OUTPUT_RSS_FILE = "social_feed.xml"
 
 def fetch_from_mirror(base_url: str, username: str, limit: int):
     """
-    Attempt to scrape up to `limit` tweets from `base_url/<username>`. Returns a list of tweet‐dicts.
+    Attempt to scrape up to `limit` tweets from `base_url/<username>`.
+    Returns a list of tweet dicts.
     Raises RuntimeError("429 …") if this mirror returned HTTP 429.
-    Raises any other Exception if something else went wrong.
+    Raises any other Exception for other errors.
     """
     url = f"{base_url}/{username}"
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; SocialFeedBot/1.0; +https://thporth.com/)"
     }
+    print(f"[DEBUG]  → GET {url}")
     resp = requests.get(url, headers=headers, timeout=20)
+    print(f"[DEBUG]    ← {resp.status_code} from {base_url}")
+
     if resp.status_code == 429:
+        # Mirror is rate‐limiting us
         raise RuntimeError(f"429 Too Many Requests from {base_url}")
+
     resp.raise_for_status()
-
     soup = BeautifulSoup(resp.text, "html.parser")
-    tweets = []
-    timeline_items = soup.select("div.timeline-item")[:limit]
 
-    for item in timeline_items:
+    # Find all <div class="timeline-item">
+    timeline_items = soup.select("div.timeline-item")
+    print(f"[DEBUG]    Found {len(timeline_items)} <div.timeline-item> elements on {base_url}/{username}")
+
+    tweets = []
+    for item in timeline_items[:limit]:
         # (A) Tweet link (relative → absolute)
         link_tag = item.select_one("a.tweet-link")
         if not link_tag or not link_tag.get("href"):
             continue
         path = link_tag["href"].strip()
         tweet_link = base_url + path
-
-        # (B) Tweet ID (last segment of path)
         tweet_id = path.rsplit("/", 1)[-1]
 
-        # (C) Tweet text/content
+        # (B) Tweet text
         content_div = item.select_one("div.tweet-content")
         tweet_text = ""
         if content_div:
@@ -86,32 +82,29 @@ def fetch_from_mirror(base_url: str, username: str, limit: int):
                     parts.append(txt)
             tweet_text = " ".join(parts).strip()
 
-        # (D) First image URL (if any)
+        # (C) First image (if any)
         img_url = ""
         attachment = item.select_one("div.attachments img")
         if attachment and attachment.get("src"):
             src = attachment["src"].strip()
             img_url = src if src.startswith("http") else base_url + src
 
-        # (E) Published timestamp from <time datetime="…">
+        # (D) Published timestamp
         time_tag = item.select_one("time")
-        pub_dt = None
         if time_tag and time_tag.get("datetime"):
             iso = time_tag["datetime"]
             try:
                 pub_dt = datetime.fromisoformat(iso.replace("Z", "+00:00"))
             except Exception:
-                # Fallback parse if needed:
                 pub_dt = datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
         else:
-            # If no exact time, use “now”:
             pub_dt = datetime.now(timezone.utc)
 
         tweets.append({
-            "id":      tweet_id,
-            "link":    tweet_link,
-            "text":    tweet_text,
-            "image":   img_url,
+            "id":        tweet_id,
+            "link":      tweet_link,
+            "text":      tweet_text,
+            "image":     img_url,
             "published": pub_dt
         })
 
@@ -121,32 +114,31 @@ def fetch_from_mirror(base_url: str, username: str, limit: int):
 def fetch_nitter_tweets(username: str, limit: int):
     """
     Try each mirror in NITTER_MIRRORS until one succeeds.
-    Returns a list of tweet‐dicts for that username (up to `limit`).
-    If all mirrors return 429, logs a warning and returns [].
+    Returns a list of tweet dicts for that username (up to limit).
+    If all mirrors return 429 or errors, returns [] after warning.
     """
     for mirror in NITTER_MIRRORS:
         try:
-            return fetch_from_mirror(mirror, username, limit)
+            tweets = fetch_from_mirror(mirror, username, limit)
+            return tweets
         except RuntimeError as re_err:
-            # Mirror-specific 429: try the next mirror
             if "429" in str(re_err):
+                print(f"[WARN] Mirror {mirror} returned 429 for @{username}. Trying next mirror…")
                 continue
             else:
-                # Some other runtime error (unlikely), re-raise
                 raise
-        except Exception:
-            # Any other exception (e.g. network), try next mirror
+        except Exception as e:
+            print(f"[WARN] Mirror {mirror} failed for @{username}: {e}")
             continue
 
-    # If we get here, all mirrors failed with 429 (or other errors):
-    print(f"[WARN] All Nitter mirrors rate-limited or failed for {username}; skipping.")
+    # If we reach here, all mirrors have failed or rate‐limited us.
+    print(f"[WARN] All Nitter mirrors failed or rate‐limited for @{username}. Skipping user.")
     return []
 
 
 def build_rss(all_tweets: list):
     """
-    Given a list of tweet dicts (with keys: id, link, text, image, published),
-    build an RSS 2.0 feed and write OUTPUT_RSS_FILE.
+    Given a list of tweet dicts, build an RSS feed and write to OUTPUT_RSS_FILE.
     """
     feed = Rss201rev2Feed(
         title="THPORTH Social Feed",
@@ -156,20 +148,13 @@ def build_rss(all_tweets: list):
         last_build_date=datetime.now(timezone.utc)
     )
 
-    # Sort tweets by published timestamp, newest first
+    # Sort newest-first
     sorted_tweets = sorted(all_tweets, key=lambda t: t["published"], reverse=True)
 
     for tw in sorted_tweets:
-        # RSS requires an RFC-2822 pubDate string
         pub_str = tw["published"].strftime("%a, %d %b %Y %H:%M:%S +0000")
+        snippet = (tw["text"][:50] + "…") if len(tw["text"]) > 50 else tw["text"] or "(Image Only)"
 
-        # Short title = first 50 chars of text (or “(Image Only)” if no text)
-        if tw["text"]:
-            snippet = tw["text"][:50] + ("…" if len(tw["text"]) > 50 else "")
-        else:
-            snippet = "(Image Only)"
-
-        # Build description: HTML with <p>…</p> and <img> if present
         desc_parts = []
         if tw["text"]:
             safe = (
@@ -184,36 +169,32 @@ def build_rss(all_tweets: list):
         description_html = "".join(desc_parts)
 
         feed.add_item(
-            title       = f"{snippet}",
+            title       = snippet,
             link        = tw["link"],
             description = f"<![CDATA[{description_html}]]>",
             unique_id   = tw["id"] or tw["link"],
             pubdate     = pub_str
         )
 
-    # Write out the XML to disk
     with open(OUTPUT_RSS_FILE, "w", encoding="utf-8") as fp:
         feed.write(fp, "utf-8")
     print(f"[OK] Wrote {len(sorted_tweets)} items to {OUTPUT_RSS_FILE}")
 
 
-# ─── MAIN ──────────────────────────────────────────────────────────────────────
-
 def main():
     all_collected = []
     for acct in ACCOUNTS:
-        print(f"→ Fetching tweets for @{acct} …")
+        print(f"[INFO] Fetching tweets for @{acct} …")
         try:
             tweets = fetch_nitter_tweets(acct, TWEETS_PER_ACCOUNT)
         except Exception as e:
-            print(f"[ERROR] Unexpected error fetching {acct}: {e}")
+            print(f"[ERROR] Unexpected error fetching @{acct}: {e}")
             tweets = []
 
-        print(f"   Retrieved {len(tweets)} tweets from @{acct}. Sleeping {DELAY_BETWEEN_REQUESTS}s …")
+        print(f"[INFO] Retrieved {len(tweets)} tweets from @{acct}. Sleeping {DELAY_BETWEEN_REQUESTS}s…")
         all_collected.extend(tweets)
         time.sleep(DELAY_BETWEEN_REQUESTS)
 
-    # Build the combined RSS feed (sorted by timestamp)
     build_rss(all_collected)
 
 
