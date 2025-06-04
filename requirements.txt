@@ -1,1 +1,5 @@
 feedparser
+requests
+feedgenerator
+beautifulsoup4
+playwright
