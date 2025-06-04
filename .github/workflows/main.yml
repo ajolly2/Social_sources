@@ -3,7 +3,7 @@ name: Social Feed Scraper
 on:
   schedule:
     - cron: "*/30 * * * *"    # every 30 minutes
-  workflow_dispatch: {}      # allow manual run
+  workflow_dispatch: {}      # allow manual trigger
 
 jobs:
   build:
