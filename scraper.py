@@ -1,136 +1,123 @@
-#!/usr/bin/env python3
+import feedgenerator
+from datetime import datetime
+from difflib import SequenceMatcher
+from playwright.sync_api import sync_playwright
 import time
+import csv
 import requests
-import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
-from feedgenerator import Rss201rev2Feed
+from io import StringIO
+import feedparser
 
-# ─── CONFIGURATION ──────────────────────────────────────────────────────────────
+CSV_TABS = {
+    "X": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=0&single=true&output=csv",
+    "Reddit": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1893373667&single=true&output=csv",
+    "Instagram": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=132310951&single=true&output=csv",
+    "TikTok": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1615836936&single=true&output=csv",
+    "Snapchat": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1149773381&single=true&output=csv"
+}
 
-# 1) List of Twitter/X handles (without the '@') to include:
-ACCOUNTS = [
-    "MLB",
-    "ESPN",
-    "NBCSports",
-    "SBNation",
-    "BleacherReport",
-    "FOXSports",
-    "BBCSport",
-    "SportsCenter",
-    "YahooSports",
-    # …you can append more handles as you like…
-]
-
-# 2) Delay between fetching each account’s RSSHub feed (seconds):
-DELAY_BETWEEN_REQUESTS = 2.0
-
-# 3) The RSSHub base URL for Twitter user feeds:
-#    (This public instance is free to use: https://rsshub.app)
-RSSHUB_BASE = "https://rsshub.app/twitter/user"
-
-# 4) Output filename for our merged RSS:
-OUTPUT_RSS_FILE = "social_feed.xml"
-
-
-# ─── HELPERS ────────────────────────────────────────────────────────────────────
-
-def fetch_rsshub_feed(username: str):
-    """
-    Fetch the RSS feed for a given Twitter/X username via RSSHub.
-    Returns a list of dicts: [{"id","title","link","description","published"}, …].
-    If anything goes wrong (HTTP error, parse error), returns [].
-    """
-    url = f"{RSSHUB_BASE}/{username}"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (compatible; SocialFeedBot/1.0; +https://thporth.com/)"
-    }
-
-    try:
-        resp = requests.get(url, headers=headers, timeout=20)
-        resp.raise_for_status()
-    except Exception as ex:
-        print(f"[ERROR] Failed to GET {url}: {ex}")
-        return []
-
-    # Parse the returned RSS XML
-    try:
-        root = ET.fromstring(resp.content)
-    except Exception as ex:
-        print(f"[ERROR] Failed to parse XML from {url}: {ex}")
-        return []
-
-    channel = root.find("channel")
-    if channel is None:
-        return []
-
-    items = []
-    for itm in channel.findall("item"):
-        title   = itm.findtext("title")       or ""
-        link    = itm.findtext("link")        or ""
-        desc    = itm.findtext("description") or ""
-        pubstr  = itm.findtext("pubDate")     or ""
-
-        # Parse pubDate (e.g. "Wed, 04 Jun 2025 15:12:00 +0000")
+def fetch_all_sources():
+    all_sources = []
+    for platform, url in CSV_TABS.items():
         try:
-            pub_dt = datetime.strptime(pubstr, "%a, %d %b %Y %H:%M:%S %z")
-        except Exception:
-            pub_dt = datetime.now(timezone.utc)
+            resp = requests.get(url)
+            data = resp.text
+            reader = csv.DictReader(StringIO(data))
+            for row in reader:
+                if row.get('platform') and row.get('account') and row.get('url'):
+                    all_sources.append({
+                        "platform": row["platform"].strip(),
+                        "account": row["account"].strip(),
+                        "url": row["url"].strip()
+                    })
+        except Exception as e:
+            print(f"Failed to fetch {platform}: {e}")
+    return all_sources
 
-        # Use <link> as unique ID
-        items.append({
-            "id":          link,
-            "title":       title,
-            "link":        link,
-            "description": desc,
-            "published":   pub_dt
+def scrape_x_profile(page, username):
+    tweets = []
+    url = f"https://x.com/{username}"
+    page.goto(url, timeout=60000)
+    time.sleep(5)
+    elements = page.query_selector_all("article div[lang]")
+    for el in elements[:10]:
+        try:
+            content = el.inner_text()
+            timestamp_el = el.evaluate_handle("node => node.closest('article').querySelector('time')")
+            timestamp = timestamp_el.get_property("dateTime").json_value() if timestamp_el else datetime.utcnow().isoformat()
+            link_el = el.evaluate_handle("node => node.closest('article').querySelector('a[role=link]')")
+            link = link_el.get_property("href").json_value() if link_el else url
+            tweets.append({
+                "user": username,
+                "content": content.strip(),
+                "url": "https://x.com" + link,
+                "date": datetime.fromisoformat(timestamp.replace("Z", "")) if timestamp else datetime.utcnow()
+            })
+        except:
+            continue
+    return tweets
+
+def parse_reddit_rss(url):
+    posts = []
+    feed = feedparser.parse(url + ".rss")
+    for entry in feed.entries[:10]:
+        posts.append({
+            "user": url.split("/")[-2],
+            "content": entry.title,
+            "url": entry.link,
+            "date": datetime(*entry.published_parsed[:6])
         })
+    return posts
 
-    return items
+def is_similar(a, b):
+    return SequenceMatcher(None, a, b).ratio() >= 0.75
 
-
-def build_merged_rss(all_items: list):
-    """
-    Given a list of item‐dicts with keys "id","title","link","description","published",
-    sort them by published (newest first) and write a single RSS 2.0 file.
-    """
-    feed = Rss201rev2Feed(
-        title          = "THPORTH Social Feed",
-        link           = "https://thporth.com/",
-        description    = "Aggregated tweets from multiple X.com accounts (via RSSHub)",
-        language       = "en",
-        last_build_date= datetime.now(timezone.utc)
-    )
-
-    # Sort descending by timestamp
-    sorted_items = sorted(all_items, key=lambda x: x["published"], reverse=True)
-
-    for itm in sorted_items:
-        pub_str = itm["published"].strftime("%a, %d %b %Y %H:%M:%S +0000")
-        feed.add_item(
-            title       = itm["title"],
-            link        = itm["link"],
-            description = itm["description"],
-            unique_id   = itm["id"],
-            pubdate     = pub_str
-        )
-
-    with open(OUTPUT_RSS_FILE, "w", encoding="utf-8") as fp:
-        feed.write(fp, "utf-8")
-    print(f"[OK] Wrote {len(sorted_items)} items to {OUTPUT_RSS_FILE}")
-
+def remove_duplicates(items):
+    unique = []
+    for item in items:
+        if not any(is_similar(item["content"], other["content"]) for other in unique):
+            unique.append(item)
+    return unique
 
 def main():
-    all_collected = []
+    sources = fetch_all_sources()
+    x_accounts = [s['account'] for s in sources if s['platform'].lower() == 'x']
+    reddit_urls = [s['url'] for s in sources if s['platform'].lower() == 'reddit']
 
-    for acct in ACCOUNTS:
-        print(f"[INFO] Fetching RSSHub for @{acct} …")
-        items = fetch_rsshub_feed(acct)
-        print(f"[INFO]   Retrieved {len(items)} items from @{acct}.")
-        all_collected.extend(items)
-        time.sleep(DELAY_BETWEEN_REQUESTS)
+    all_posts = []
 
-    build_merged_rss(all_collected)
+    with sync_playwright() as p:
+        browser = p.firefox.launch(headless=True)
+        page = browser.new_page()
+        for account in x_accounts:
+            print(f"Scraping X @{account}")
+            all_posts += scrape_x_profile(page, account)
+        browser.close()
 
+    for url in reddit_urls:
+        print(f"Fetching Reddit feed: {url}")
+        all_posts += parse_reddit_rss(url)
+
+    all_posts.sort(key=lambda x: x["date"], reverse=True)
+    filtered = remove_duplicates(all_posts)
+
+    feed = feedgenerator.Rss201rev2Feed(
+        title="Aggregated Social Sports Feed",
+        link="https://yourdomain.com/rss",
+        description="Combined posts from X.com + Reddit",
+        language="en"
+    )
+
+    for post in filtered:
+        feed.add_item(
+            title=f"@{post['user']}: {post['content'][:50]}...",
+            link=post["url"],
+            description=post["content"],
+            pubdate=post["date"]
+        )
+
+    with open("social_feed.xml", "w", encoding="utf-8") as f:
+        feed.write(f, "utf-8")
 
 if __name__ == "__main__":
     main()
