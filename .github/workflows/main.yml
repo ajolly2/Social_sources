@@ -3,7 +3,7 @@ name: Social Feed Scraper
 on:
   schedule:
     - cron: "*/30 * * * *"    # every 30 minutes
-  workflow_dispatch: {}      # allow manual run
+  workflow_dispatch: {}       # allow manual run
 
 jobs:
   build:
@@ -28,11 +28,15 @@ jobs:
             pip install -r requirements.txt
           fi
 
-      # 4) Run our scraper
+      # 4) Install Playwright browsers
+      - name: Install Playwright Browsers
+        run: python -m playwright install --with-deps
+
+      # 5) Run the scraper script
       - name: Run scraper.py
         run: python scraper.py
 
-      # 5) If social_feed.xml changed, commit & push it
+      # 6) Commit and push the updated RSS feed if it changed
       - name: Commit and push RSS feed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,4 +50,3 @@ jobs:
             git push origin HEAD:main
           else
             echo "No changes to social_feed.xml; skipping commit."
-          fi
