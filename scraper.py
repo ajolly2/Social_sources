@@ -1,11 +1,12 @@
-import feedgenerator
-from datetime import datetime
-from difflib import SequenceMatcher
-from playwright.sync_api import sync_playwright
-import time
+# scraper.py
+import json
 import csv
+import time
 import requests
 from io import StringIO
+from datetime import datetime
+from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 import feedparser
 
 CSV_TABS = {
@@ -16,108 +17,78 @@ CSV_TABS = {
     "Snapchat": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1149773381&single=true&output=csv"
 }
 
-def fetch_all_sources():
-    all_sources = []
+def fetch_sources():
+    sources = []
     for platform, url in CSV_TABS.items():
         try:
             resp = requests.get(url)
-            data = resp.text
-            reader = csv.DictReader(StringIO(data))
+            reader = csv.DictReader(StringIO(resp.text))
             for row in reader:
                 if row.get('platform') and row.get('account') and row.get('url'):
-                    all_sources.append({
-                        "platform": row["platform"].strip(),
+                    sources.append({
+                        "platform": platform,
                         "account": row["account"].strip(),
                         "url": row["url"].strip()
                     })
         except Exception as e:
-            print(f"Failed to fetch {platform}: {e}")
-    return all_sources
+            print(f"Error fetching {platform}: {e}")
+    return sources
 
-def scrape_x_profile(page, username):
-    tweets = []
-    url = f"https://x.com/{username}"
-    page.goto(url, timeout=60000)
+def scrape_x(page, username):
+    posts = []
+    page.goto(f"https://x.com/{username}", timeout=60000)
     time.sleep(5)
-    elements = page.query_selector_all("article div[lang]")
-    for el in elements[:10]:
+    for el in page.query_selector_all("article div[lang]")[:5]:
         try:
             content = el.inner_text()
-            timestamp_el = el.evaluate_handle("node => node.closest('article').querySelector('time')")
-            timestamp = timestamp_el.get_property("dateTime").json_value() if timestamp_el else datetime.utcnow().isoformat()
-            link_el = el.evaluate_handle("node => node.closest('article').querySelector('a[role=link]')")
-            link = link_el.get_property("href").json_value() if link_el else url
-            tweets.append({
-                "user": username,
-                "content": content.strip(),
-                "url": "https://x.com" + link,
-                "date": datetime.fromisoformat(timestamp.replace("Z", "")) if timestamp else datetime.utcnow()
+            time_tag = el.evaluate_handle("node => node.closest('article').querySelector('time')")
+            timestamp = time_tag.get_property("dateTime").json_value() if time_tag else datetime.utcnow().isoformat()
+            link_tag = el.evaluate_handle("node => node.closest('article').querySelector('a[role=link]')")
+            link = link_tag.get_property("href").json_value() if link_tag else f"https://x.com/{username}"
+            posts.append({
+                "platform": "X",
+                "account": username,
+                "text": content,
+                "url": f"https://x.com{link}",
+                "date": timestamp
             })
         except:
             continue
-    return tweets
+    return posts
 
-def parse_reddit_rss(url):
+def scrape_reddit(url):
     posts = []
     feed = feedparser.parse(url + ".rss")
-    for entry in feed.entries[:10]:
+    for entry in feed.entries[:5]:
         posts.append({
-            "user": url.split("/")[-2],
-            "content": entry.title,
+            "platform": "Reddit",
+            "account": url.split("/")[-2],
+            "text": entry.title,
             "url": entry.link,
-            "date": datetime(*entry.published_parsed[:6])
+            "date": entry.published
         })
     return posts
 
-def is_similar(a, b):
-    return SequenceMatcher(None, a, b).ratio() >= 0.75
-
-def remove_duplicates(items):
-    unique = []
-    for item in items:
-        if not any(is_similar(item["content"], other["content"]) for other in unique):
-            unique.append(item)
-    return unique
-
 def main():
-    sources = fetch_all_sources()
-    x_accounts = [s['account'] for s in sources if s['platform'].lower() == 'x']
-    reddit_urls = [s['url'] for s in sources if s['platform'].lower() == 'reddit']
-
     all_posts = []
+    sources = fetch_sources()
+    x_accounts = [s['account'] for s in sources if s['platform'] == 'X']
+    reddit_urls = [s['url'] for s in sources if s['platform'] == 'Reddit']
 
     with sync_playwright() as p:
         browser = p.firefox.launch(headless=True)
         page = browser.new_page()
-        for account in x_accounts:
-            print(f"Scraping X @{account}")
-            all_posts += scrape_x_profile(page, account)
+        for user in x_accounts:
+            all_posts.extend(scrape_x(page, user))
         browser.close()
 
     for url in reddit_urls:
-        print(f"Fetching Reddit feed: {url}")
-        all_posts += parse_reddit_rss(url)
+        all_posts.extend(scrape_reddit(url))
 
-    all_posts.sort(key=lambda x: x["date"], reverse=True)
-    filtered = remove_duplicates(all_posts)
+    all_posts.sort(key=lambda x: x['date'], reverse=True)
 
-    feed = feedgenerator.Rss201rev2Feed(
-        title="Aggregated Social Sports Feed",
-        link="https://yourdomain.com/rss",
-        description="Combined posts from X.com + Reddit",
-        language="en"
-    )
-
-    for post in filtered:
-        feed.add_item(
-            title=f"@{post['user']}: {post['content'][:50]}...",
-            link=post["url"],
-            description=post["content"],
-            pubdate=post["date"]
-        )
-
-    with open("social_feed.xml", "w", encoding="utf-8") as f:
-        feed.write(f, "utf-8")
+    with open("social_feed.json", "w", encoding="utf-8") as f:
+        json.dump(all_posts, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     main()
