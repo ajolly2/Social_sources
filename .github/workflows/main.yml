@@ -1,9 +1,9 @@
 name: Social Feed Scraper
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # runs every hour
+    - cron: "*/30 * * * *"  # Runs every 30 minutes
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,10 +16,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
 
       - name: Run scraper
         run: python scraper.py
@@ -30,5 +31,4 @@ jobs:
           git config user.email "rss-bot@example.com"
           git add social_feed.xml
           git commit -m "Update social feed" || echo "No changes to commit"
-          git pull --rebase
-          git push
+          git push origin main --force
