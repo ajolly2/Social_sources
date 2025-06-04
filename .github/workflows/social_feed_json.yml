@@ -1,9 +1,9 @@
-name: Social Feed JSON Builder
+name: Social Feed JSON Scraper
 
 on:
   schedule:
-    - cron: "*/30 * * * *"    # every 30 minutes
-  workflow_dispatch: {}       # manual trigger
+    - cron: "*/30 * * * *"  # Every 30 minutes
+  workflow_dispatch:
 
 jobs:
   build:
