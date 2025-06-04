@@ -1,4 +1,3 @@
-feedparser
 requests
-feedgenerator
 beautifulsoup4
+feedgenerator
