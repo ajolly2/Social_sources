@@ -10,32 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2) Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
-      # 3) Install Python dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4) Install Playwright browser dependencies
       - name: Install Playwright Browsers
         run: |
           python -m playwright install
 
-      # 5) Run scraper script
       - name: Run scraper.py
         run: python scraper.py
 
-      # 6) Commit and push RSS feed if changed
       - name: Commit and push RSS feed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
