@@ -1,114 +1,70 @@
-import json
-import csv
 import requests
-from io import StringIO
+import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
 from datetime import datetime
-from difflib import SequenceMatcher
-from playwright.sync_api import sync_playwright
-import feedparser
+import json
+import re
 
-CSV_TABS = {
-    "X": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=0&single=true&output=csv",
-    "Reddit": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEz2MZh1rsBpDf5SzS_OVSy2YCNaNZBO4yOZSpZqlbqs7oEOeWcOvpaSrY3KT8hYhxn2IYvsPbMklu/pub?gid=1893373667&single=true&output=csv"
-}
+SITEMAP_INDEX = 'https://www.livesoccertv.com/sitemap/sitemap_index.xml'
+TODAY = datetime.utcnow().strftime('%Y-%m-%d')
 
+def get_today_sitemap_urls():
+    r = requests.get(SITEMAP_INDEX)
+    r.raise_for_status()
+    root = ET.fromstring(r.text)
+    urls = []
+    for sitemap in root.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}sitemap'):
+        loc = sitemap.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text
+        if TODAY in loc:
+            r2 = requests.get(loc)
+            r2.raise_for_status()
+            subroot = ET.fromstring(r2.text)
+            for url in subroot.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}url'):
+                urls.append(url.find('{http://www.sitemaps.org/schemas/sitemap/0.9}loc').text)
+    return urls
 
-def fetch_all_sources():
-    all_sources = []
-    for platform, url in CSV_TABS.items():
-        try:
-            resp = requests.get(url)
-            data = resp.text
-            reader = csv.DictReader(StringIO(data))
-            for row in reader:
-                if row.get('platform') and row.get('account') and row.get('url'):
-                    all_sources.append({
-                        "platform": row["platform"].strip(),
-                        "account": row["account"].strip(),
-                        "url": row["url"].strip()
-                    })
-        except Exception as e:
-            print(f"Failed to fetch {platform}: {e}")
-    return all_sources
-
-
-def scrape_x_profile(page, username):
-    tweets = []
-    url = f"https://x.com/{username}"
-    page.goto(url, timeout=60000)
-    page.wait_for_timeout(5000)
-    elements = page.query_selector_all("article div[lang]")
-    for el in elements[:10]:
-        try:
-            content = el.inner_text()
-            timestamp_el = el.evaluate_handle("node => node.closest('article').querySelector('time')")
-            timestamp = timestamp_el.get_property("dateTime").json_value() if timestamp_el else datetime.utcnow().isoformat()
-            link_el = el.evaluate_handle("node => node.closest('article').querySelector('a[role=link]')")
-            link = link_el.get_property("href").json_value() if link_el else url
-            tweets.append({
-                "platform": "X",
-                "user": username,
-                "content": content.strip(),
-                "url": "https://x.com" + link,
-                "date": datetime.fromisoformat(timestamp.replace("Z", "")).isoformat()
+def parse_league_page(url):
+    r = requests.get(url, headers={
+        'User-Agent': 'Mozilla/5.0',
+        'Accept-Language': 'en-US,en;q=0.9'
+    })
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, 'html.parser')
+    date = soup.find('h2', text=re.compile(r'\w+day,\s+\d+\s+\w+')).get_text(strip=True)
+    out = []
+    for section in soup.select('.wrap .stat-wrap'):
+        league = section.find('h3').get_text(strip=True)
+        for row in section.select('tr'):
+            cols = row.find_all('td')
+            if len(cols) < 2: continue
+            time_cell = cols[0].get_text(strip=True)
+            match_text = cols[1].get_text(" ", strip=True)
+            stream = cols[-1].get_text(strip=True)
+            m = re.match(r'(.+?)\s+(\d+\s*-\s*\d+)\s+(.+)', match_text)
+            if m:
+                home, score, away = m.groups()
+            else:
+                parts = match_text.split(' vs ')
+                home, away = parts if len(parts)==2 else (match_text, '')
+                score = ''
+            out.append({
+                'date': date,
+                'league': league,
+                'time': time_cell,
+                'home': home,
+                'away': away,
+                'score': score,
+                'stream': stream,
+                'url': url
             })
-        except:
-            continue
-    return tweets
-
-
-def parse_reddit_rss(url):
-    posts = []
-    feed = feedparser.parse(url + ".rss")
-    for entry in feed.entries[:10]:
-        posts.append({
-            "platform": "Reddit",
-            "user": url.split("/")[-2],
-            "content": entry.title,
-            "url": entry.link,
-            "date": datetime(*entry.published_parsed[:6]).isoformat()
-        })
-    return posts
-
-
-def is_similar(a, b):
-    return SequenceMatcher(None, a, b).ratio() >= 0.75
-
-
-def remove_duplicates(items):
-    unique = []
-    for item in items:
-        if not any(is_similar(item["content"], other["content"]) for other in unique):
-            unique.append(item)
-    return unique
-
+    return out
 
 def main():
-    sources = fetch_all_sources()
-    x_accounts = [s['account'] for s in sources if s['platform'].lower() == 'x']
-    reddit_urls = [s['url'] for s in sources if s['platform'].lower() == 'reddit']
+    all_matches = []
+    for league_url in get_today_sitemap_urls():
+        all_matches += parse_league_page(league_url)
+    with open('data.json','w') as f:
+        json.dump(all_matches, f, indent=2)
 
-    all_posts = []
-
-    with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True)
-        page = browser.new_page()
-        for account in x_accounts:
-            print(f"Scraping X @{account}")
-            all_posts += scrape_x_profile(page, account)
-        browser.close()
-
-    for url in reddit_urls:
-        print(f"Fetching Reddit feed: {url}")
-        all_posts += parse_reddit_rss(url)
-
-    all_posts.sort(key=lambda x: x["date"], reverse=True)
-    filtered = remove_duplicates(all_posts)
-
-    with open("social_feed.json", "w", encoding="utf-8") as f:
-        json.dump(filtered, f, ensure_ascii=False, indent=2)
-    print(f"[OK] Wrote {len(filtered)} items to social_feed.json")
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
