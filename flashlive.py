@@ -1,6 +1,5 @@
 import os
 import requests
-import datetime
 
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 BASE_URL    = "https://flashlive-sports.p.rapidapi.com/v1/events/list"
@@ -20,12 +19,11 @@ HEADERS = {
 def get_flashlive_games():
     all_games = []
 
-    for league_name, sport_id in LEAGUES.items():
-        # **Use a valid locale code and drop timezone entirely**
+    for league_name, category_id in LEAGUES.items():
         params = {
-            "locale":    "en_GB",   # MUST be one of the enum values (e.g. en_GB, en_CA, etc.)
-            "sport_id":  sport_id,
-            "indent_days": 0        # today’s events
+            "locale":      "en_GB",   # valid code from their list
+            "category_id": category_id,
+            "days":        0          # today
         }
         resp = requests.get(BASE_URL, headers=HEADERS, params=params)
         payload = resp.json()
