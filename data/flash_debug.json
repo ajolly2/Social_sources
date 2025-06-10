@@ -1,0 +1,162 @@
+{
+  "MLB": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "locale"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "sport_id"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "timezone"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "indent_days"
+        ],
+        "msg": "Field required",
+        "input": null
+      }
+    ]
+  },
+  "NBA": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "locale"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "sport_id"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "timezone"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "indent_days"
+        ],
+        "msg": "Field required",
+        "input": null
+      }
+    ]
+  },
+  "NHL": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "locale"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "sport_id"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "timezone"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "indent_days"
+        ],
+        "msg": "Field required",
+        "input": null
+      }
+    ]
+  },
+  "WNBA": {
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "locale"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "sport_id"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "timezone"
+        ],
+        "msg": "Field required",
+        "input": null
+      },
+      {
+        "type": "missing",
+        "loc": [
+          "query",
+          "indent_days"
+        ],
+        "msg": "Field required",
+        "input": null
+      }
+    ]
+  }
+}
