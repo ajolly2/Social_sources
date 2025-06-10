@@ -4,10 +4,11 @@ import requests
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 BASE_URL    = "https://flashlive-sports.p.rapidapi.com/v1/events/list"
 
+# Map our four leagues to their category_id values
 LEAGUES = {
     "MLB": 103,
-    "NBA": 2,
-    "NHL": 4,
+    "NBA":   2,
+    "NHL":   4,
     "WNBA": 22
 }
 
@@ -21,13 +22,18 @@ def get_flashlive_games():
 
     for league_name, category_id in LEAGUES.items():
         params = {
-            "locale":      "en_GB",   # valid code from their list
             "category_id": category_id,
-            "days":        0          # today
+            "days":        0   # only today
         }
-        resp = requests.get(BASE_URL, headers=HEADERS, params=params)
-        payload = resp.json()
 
+        resp = requests.get(BASE_URL, headers=HEADERS, params=params)
+        # Save for debug if needed
+        try:
+            payload = resp.json()
+        except ValueError:
+            payload = {}
+
+        # Their data list can be under DATA or data
         items = payload.get("DATA") or payload.get("data") or []
         for item in items:
             start_time = item.get("START_TIME") or item.get("start_time")
