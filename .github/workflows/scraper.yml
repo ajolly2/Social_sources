@@ -38,11 +38,13 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add data/flash_debug_full.json data/raw_flash.json data/raw_tv.json data/games.json
+-         git add data/flash_debug_full.json data/raw_flash.json data/raw_tv.json data/games.json
++         git add data/flash_debug_full.json data/flash_mlb_payload.json data/raw_flash.json data/raw_tv.json data/games.json
           if ! git diff --cached --quiet; then
             git commit -m "Update scraped & debug data"
             git push
           else
             echo "No changes to commit"
           fi
+
 
