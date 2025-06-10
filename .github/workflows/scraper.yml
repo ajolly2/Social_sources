@@ -26,16 +26,18 @@ jobs:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
         run: python run.py
 
-      - name: Commit and push changes
+      - name: Commit and push debug data
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add data/*.json
-          # only commit if there are staged changes
+          # always add the debug file
+          git add data/flash_debug.json
+          # only commit if there's something new
           if ! git diff --cached --quiet; then
-            git commit -m "Update scraped data"
+            git commit -m "Update flash_debug.json"
             git push
           else
-            echo "No data changes to commit"
+            echo "No changes in flash_debug.json to commit"
           fi
+
 
