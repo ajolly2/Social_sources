@@ -85,7 +85,7 @@
     "away": "Miami Marlins",
     "start_time": "2025-06-10T22:40:00",
     "score_home": "0",
-    "score_away": "0",
+    "score_away": "2",
     "status": "LIVE",
     "channel": null
   },
@@ -104,9 +104,9 @@
     "home": "Boston Red Sox",
     "away": "Tampa Bay Rays",
     "start_time": "2025-06-10T23:10:00",
-    "score_home": "",
-    "score_away": "",
-    "status": "SCHEDULED",
+    "score_home": "0",
+    "score_away": "0",
+    "status": "LIVE",
     "channel": null
   },
   {
@@ -114,9 +114,9 @@
     "home": "New York Mets",
     "away": "Washington Nationals",
     "start_time": "2025-06-10T23:10:00",
-    "score_home": "",
-    "score_away": "",
-    "status": "SCHEDULED",
+    "score_home": "0",
+    "score_away": "0",
+    "status": "LIVE",
     "channel": null
   },
   {
