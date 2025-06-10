@@ -2,14 +2,14 @@ import os
 import requests
 
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
-BASE_URL    = "https://flashlive-sports.p.rapidapi.com/v1/events/list"
+BASE_URL     = "https://flashlive-sports.p.rapidapi.com/v1/events/list"
 
-# Map our four leagues to their category_id values
-LEAGUES = {
-    "MLB": 103,
-    "NBA":   2,
-    "NHL":   4,
-    "WNBA": 22
+# ← Replace these with the IDs you got from /sports/list
+SPORT_IDS = {
+    "MLB":  <your_mlb_id>,
+    "NBA":  <your_nba_id>,
+    "NHL":  <your_nhl_id>,
+    "WNBA": <your_wnba_id>
 }
 
 HEADERS = {
@@ -20,38 +20,25 @@ HEADERS = {
 def get_flashlive_games():
     all_games = []
 
-    for league_name, category_id in LEAGUES.items():
+    for league, sid in SPORT_IDS.items():
         params = {
-            "category_id": category_id,
-            "days":        0   # only today
+            "sport_id": sid,
+            "days":     0       # today
         }
+        resp    = requests.get(BASE_URL, headers=HEADERS, params=params)
+        payload = resp.json()
 
-        resp = requests.get(BASE_URL, headers=HEADERS, params=params)
-        # Save for debug if needed
-        try:
-            payload = resp.json()
-        except ValueError:
-            payload = {}
-
-        # Their data list can be under DATA or data
         items = payload.get("DATA") or payload.get("data") or []
-        for item in items:
-            start_time = item.get("START_TIME") or item.get("start_time")
-            home       = (item.get("HOME") or {}).get("NAME") or (item.get("home") or {}).get("name")
-            away       = (item.get("AWAY") or {}).get("NAME") or (item.get("away") or {}).get("name")
-            score_home = (item.get("HOME") or {}).get("SCORE", {}).get("CURRENT", "")
-            score_away = (item.get("AWAY") or {}).get("SCORE", {}).get("CURRENT", "")
-            status     = item.get("STATE") or item.get("state")
-
+        for ev in items:
             all_games.append({
-                "league":      league_name,
-                "home":        home,
-                "away":        away,
-                "start_time":  start_time,
-                "score_home":  score_home,
-                "score_away":  score_away,
-                "status":      status,
-                "channel":     None
+                "league":     league,
+                "home":       (ev.get("HOME") or {}).get("NAME") or (ev.get("home") or {}).get("name"),
+                "away":       (ev.get("AWAY") or {}).get("NAME") or (ev.get("away") or {}).get("name"),
+                "start_time": ev.get("START_TIME") or ev.get("start_time"),
+                "score_home": (ev.get("HOME") or {}).get("SCORE", {}).get("CURRENT", ""),
+                "score_away": (ev.get("AWAY") or {}).get("SCORE", {}).get("CURRENT", ""),
+                "status":     ev.get("STATE") or ev.get("state"),
+                "channel":    None
             })
 
     return all_games
