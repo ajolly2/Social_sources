@@ -1,0 +1,4517 @@
+{
+  "DATA": [
+    {
+      "NAME": "Czech Republic: Extraliga",
+      "HEADER": "Czech Republic: Extraliga;182;KIgEG5WS",
+      "NAME_PART_1": "Czech Republic",
+      "NAME_PART_2": "Extraliga",
+      "TOURNAMENT_TEMPLATE_ID": "IynvQfzT",
+      "COUNTRY_ID": 62,
+      "COUNTRY_NAME": "Czech Republic",
+      "TOURNAMENT_STAGE_ID": "KIgEG5WS",
+      "TOURNAMENT_TYPE": "p",
+      "TOURNAMENT_ID": "fucoj657",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "62_IynvQfzT",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "Extraliga",
+      "URL": "/baseball/czech-republic/extraliga/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/nPusyzAj-6JgDtSVk.png",
+      "SORT": "13Czech Republ014public0000000000001000Extraliga   009raliga000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "fucoj657",
+      "CATEGORY_NAME": "Czech Republic",
+      "EVENTS": [
+        {
+          "EVENT_ID": "hKI420hf",
+          "START_TIME": 1749574800,
+          "START_UTIME": 1749574800,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Draci Brno",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749583592,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "DRA",
+          "HOME_PARTICIPANT_IDS": [
+            "lGxe7Eit"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Draci Brno",
+          "HOME_PARTICIPANT_NAME_ONE": "Draci Brno",
+          "HOME_EVENT_PARTICIPANT_ID": "Ms2VUNx1",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 9,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "7",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "3",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "2",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "2",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/Usp7rwDr-d0xMNvLB.png"
+          ],
+          "IMM": "ClrMdzVs",
+          "IMW": "100",
+          "IMP": "YP9kMpeM-KxCnhNlS.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "TRE",
+          "AWAY_PARTICIPANT_IDS": [
+            "ClrMdzVs"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Trebic",
+          "AWAY_PARTICIPANT_NAME_ONE": "Trebic",
+          "AWAY_EVENT_PARTICIPANT_ID": "U75wT17D",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 4,
+          "AWAY_ERRORS": 3,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 1,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "1",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/YP9kMpeM-KxCnhNlS.png"
+          ],
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "Japan: NPB",
+      "HEADER": "Japan: NPB;182;SxGUMDqD",
+      "NAME_PART_1": "Japan",
+      "NAME_PART_2": "NPB",
+      "TOURNAMENT_TEMPLATE_ID": "SW9D1eZo",
+      "COUNTRY_ID": 100,
+      "COUNTRY_NAME": "Japan",
+      "TOURNAMENT_STAGE_ID": "SxGUMDqD",
+      "TOURNAMENT_TYPE": "t",
+      "TOURNAMENT_ID": "I9KwdLdg",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "100_SW9D1eZo",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "NPB",
+      "URL": "/baseball/japan/npb/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/bN3Txi8j-OtZjhYmo.png",
+      "SORT": "13Japan       005......0000000000001000NPB         003......000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "I9KwdLdg",
+      "CATEGORY_NAME": "Japan",
+      "EVENTS": [
+        {
+          "EVENT_ID": "fiH5PFVo",
+          "START_TIME": 1749546000,
+          "START_UTIME": 1749546000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Chiba Lotte Marines",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749556209,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "CHI",
+          "HOME_PARTICIPANT_IDS": [
+            "KKlHBnlo"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Sammons B.",
+            2,
+            1
+          ],
+          "HOME_NAME": "Chiba Lotte Marines",
+          "HOME_PARTICIPANT_NAME_ONE": "Chiba Lotte Marines",
+          "HOME_EVENT_PARTICIPANT_ID": "QcDI5rd3",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 12,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "6",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "1",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "4",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ABzkWZeM-foV023AC.png"
+          ],
+          "IMM": "j3iI2SuU",
+          "IMW": "100",
+          "IMP": "bZyKt3EG-UV1Mu7H3.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "HIR",
+          "AWAY_PARTICIPANT_IDS": [
+            "j3iI2SuU"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Tamamura S.",
+            3,
+            5
+          ],
+          "AWAY_NAME": "Hiroshima Carp",
+          "AWAY_PARTICIPANT_NAME_ONE": "Hiroshima Carp",
+          "AWAY_EVENT_PARTICIPANT_ID": "WfGQ3MQF",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 1,
+          "AWAY_ERRORS": 2,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 1,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "1",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/bZyKt3EG-UV1Mu7H3.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "OW8MLXUA",
+          "START_TIME": 1749546000,
+          "START_UTIME": 1749546000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Fukuoka S. Hawks",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749560200,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "FUK",
+          "HOME_PARTICIPANT_IDS": [
+            "MJ3q4UeB"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Matsumoto Y.",
+            1,
+            1
+          ],
+          "HOME_NAME": "Fukuoka S. Hawks",
+          "HOME_PARTICIPANT_NAME_ONE": "Fukuoka S. Hawks",
+          "HOME_EVENT_PARTICIPANT_ID": "rH8CfIm2",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 12,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "5",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "3",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/UZaePYCr-YyU41NPI.png"
+          ],
+          "IMM": "WpwP6WBh",
+          "IMW": "100",
+          "IMP": "EJBZNACr-GfWd3qe6.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "YOM",
+          "AWAY_PARTICIPANT_IDS": [
+            "WpwP6WBh"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Tanaka E.",
+            0,
+            2
+          ],
+          "AWAY_NAME": "Yomiuri Giants",
+          "AWAY_PARTICIPANT_NAME_ONE": "Yomiuri Giants",
+          "AWAY_EVENT_PARTICIPANT_ID": "zBebILu9",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 11,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "2",
+          "AWAY_SCORE_FULL": 2,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "2",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/EJBZNACr-GfWd3qe6.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "hrcUWFN5",
+          "START_TIME": 1749546000,
+          "START_UTIME": 1749546000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Nippon Ham Fighters",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749557460,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "NIP",
+          "HOME_PARTICIPANT_IDS": [
+            "AyxT5jRb"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Tatsu K.",
+            3,
+            0
+          ],
+          "HOME_NAME": "Nippon Ham Fighters",
+          "HOME_PARTICIPANT_NAME_ONE": "Nippon Ham Fighters",
+          "HOME_EVENT_PARTICIPANT_ID": "8KsiV1Kj",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 9,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "3",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "1",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "1",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dldkRkBr-YyU41NPI.png"
+          ],
+          "IMM": "Qsi8zWQo",
+          "IMW": "100",
+          "IMP": "AZYWdNEG-jw4cqk8d.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "YAK",
+          "AWAY_PARTICIPANT_IDS": [
+            "Qsi8zWQo"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Lambert P.",
+            1,
+            5
+          ],
+          "AWAY_NAME": "Yakult Swallows",
+          "AWAY_PARTICIPANT_NAME_ONE": "Yakult Swallows",
+          "AWAY_EVENT_PARTICIPANT_ID": "zRZxg5Cc",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 4,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 1,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "1",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/AZYWdNEG-jw4cqk8d.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "S4FDNg0b",
+          "START_TIME": 1749546000,
+          "START_UTIME": 1749546000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Orix Buffaloes",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749555450,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "ORI",
+          "HOME_PARTICIPANT_IDS": [
+            "lphNjEdn"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Kuri A.",
+            5,
+            4
+          ],
+          "HOME_NAME": "Orix Buffaloes",
+          "HOME_PARTICIPANT_NAME_ONE": "Orix Buffaloes",
+          "HOME_EVENT_PARTICIPANT_ID": "48EY10eS",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 5,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "2",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "1",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/UqmoAXh5-foV023AC.png"
+          ],
+          "IMM": "AggJifst",
+          "IMW": "100",
+          "IMP": "nTs75nwS-ULff7gp6.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "YOK",
+          "AWAY_PARTICIPANT_IDS": [
+            "AggJifst"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Azuma K.",
+            6,
+            3
+          ],
+          "AWAY_NAME": "Yokohama Baystars",
+          "AWAY_PARTICIPANT_NAME_ONE": "Yokohama Baystars",
+          "AWAY_EVENT_PARTICIPANT_ID": "zi54dvJk",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 4,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "0",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/nTs75nwS-ULff7gp6.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "EcowVghI",
+          "START_TIME": 1749546000,
+          "START_UTIME": 1749546000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Rakuten Gold. Eagles",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749556962,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "RAK",
+          "HOME_PARTICIPANT_IDS": [
+            "OS9BZkth"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Yajure M.",
+            0,
+            2
+          ],
+          "HOME_NAME": "Rakuten Gold. Eagles",
+          "HOME_PARTICIPANT_NAME_ONE": "Rakuten Gold. Eagles",
+          "HOME_EVENT_PARTICIPANT_ID": "8vYpiqsA",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 5,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "1",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "1",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/QBMZFryB-UV1Mu7H3.png"
+          ],
+          "IMM": "4byX4At5",
+          "IMW": "100",
+          "IMP": "hv6uOlZg-CSS80suP.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "CHU",
+          "AWAY_PARTICIPANT_IDS": [
+            "4byX4At5"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Muller K.",
+            2,
+            3
+          ],
+          "AWAY_NAME": "Chunichi Dragons",
+          "AWAY_PARTICIPANT_NAME_ONE": "Chunichi Dragons",
+          "AWAY_EVENT_PARTICIPANT_ID": "feWhkNBM",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 8,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "3",
+          "AWAY_SCORE_FULL": 3,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "3",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/hv6uOlZg-CSS80suP.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "MNloTXMU",
+          "START_TIME": 1749546000,
+          "START_UTIME": 1749546000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Seibu Lions",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749557481,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "SEI",
+          "HOME_PARTICIPANT_IDS": [
+            "rZih28QN"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Ramirez E.",
+            1,
+            0
+          ],
+          "HOME_NAME": "Seibu Lions",
+          "HOME_PARTICIPANT_NAME_ONE": "Seibu Lions",
+          "HOME_EVENT_PARTICIPANT_ID": "QwNOq1Zq",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 9,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "4",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "4",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/IiGN8mFG-AZtXV9p6.png"
+          ],
+          "IMM": "4rgl3lBH",
+          "IMW": "100",
+          "IMP": "0hVGrkFa-x4Xh4Pu0.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "HAN",
+          "AWAY_PARTICIPANT_IDS": [
+            "4rgl3lBH"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Kirishiki T.",
+            1,
+            1
+          ],
+          "AWAY_NAME": "Hanshin Tigers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Hanshin Tigers",
+          "AWAY_EVENT_PARTICIPANT_ID": "biLWsu4d",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 8,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "2",
+          "AWAY_SCORE_FULL": 2,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "1",
+          "AWAY_SCORE_PART_3": "1",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/0hVGrkFa-x4Xh4Pu0.png"
+          ],
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "Mexico: LMB",
+      "HEADER": "Mexico: LMB;182;8IWjmbO4",
+      "NAME_PART_1": "Mexico",
+      "NAME_PART_2": "LMB",
+      "TOURNAMENT_TEMPLATE_ID": "Mg9H0Flh",
+      "COUNTRY_ID": 128,
+      "COUNTRY_NAME": "Mexico",
+      "TOURNAMENT_STAGE_ID": "8IWjmbO4",
+      "TOURNAMENT_TYPE": "t",
+      "TOURNAMENT_ID": "xhMgBvRh",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "128_Mg9H0Flh",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "LMB",
+      "URL": "/baseball/mexico/lmb/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/zsCNLCCO-jXACj1N2.png",
+      "SORT": "13Mexico      006Mexico0010000000001000LMB         003......000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "xhMgBvRh",
+      "CATEGORY_NAME": "Mexico",
+      "EVENTS": [
+        {
+          "EVENT_ID": "joyRK4uB",
+          "START_TIME": 1749519000,
+          "START_UTIME": 1749519000,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Jalisco",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749529761,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "JAL",
+          "HOME_PARTICIPANT_IDS": [
+            "Sh2FIAnH"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Vera E.",
+            6,
+            2
+          ],
+          "HOME_NAME": "Jalisco",
+          "HOME_PARTICIPANT_NAME_ONE": "Jalisco",
+          "HOME_EVENT_PARTICIPANT_ID": "KfqdsBV6",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 13,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "7",
+          "HOME_SCORE_PART_1": "2",
+          "HOME_SCORE_PART_2": "1",
+          "HOME_SCORE_PART_3": "1",
+          "HOME_SCORE_PART_4": "2",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/8n15beAr-fqAxa9zr.png"
+          ],
+          "IMM": "EmZ7hZs6",
+          "IMW": "100",
+          "IMP": "AwinlmZA-ni8mxkcb.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "QUI",
+          "AWAY_PARTICIPANT_IDS": [
+            "EmZ7hZs6"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Torres D.",
+            3,
+            6
+          ],
+          "AWAY_NAME": "Quintana Roo",
+          "AWAY_PARTICIPANT_NAME_ONE": "Quintana Roo",
+          "AWAY_EVENT_PARTICIPANT_ID": "SKn4uk0J",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 7,
+          "AWAY_ERRORS": 3,
+          "AWAY_SCORE_CURRENT": "3",
+          "AWAY_SCORE_FULL": 3,
+          "AWAY_SCORE_PART_1": "1",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "1",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "1",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/AwinlmZA-ni8mxkcb.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "M5qAOntn",
+          "START_TIME": 1749601800,
+          "START_UTIME": 1749601800,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Dos Laredos",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "LAR",
+          "HOME_PARTICIPANT_IDS": [
+            "rDzzOfSn"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Camarena D.",
+            0,
+            0
+          ],
+          "HOME_NAME": "Dos Laredos",
+          "HOME_PARTICIPANT_NAME_ONE": "Dos Laredos",
+          "HOME_EVENT_PARTICIPANT_ID": "dppPSBGD",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/jsfKk5f5-hf8mqtOe.png"
+          ],
+          "IMM": "UFg5WABU",
+          "IMW": "100",
+          "IMP": "8vz0AZFG-I9yCPVyG.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "CAM",
+          "AWAY_PARTICIPANT_IDS": [
+            "UFg5WABU"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Hogan M.",
+            2,
+            2
+          ],
+          "AWAY_NAME": "Campeche",
+          "AWAY_PARTICIPANT_NAME_ONE": "Campeche",
+          "AWAY_EVENT_PARTICIPANT_ID": "OjxBjF8K",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/8vz0AZFG-I9yCPVyG.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "Netherlands: Hoofdklasse",
+      "HEADER": "Netherlands: Hoofdklasse;182;2RxD2AE2",
+      "NAME_PART_1": "Netherlands",
+      "NAME_PART_2": "Hoofdklasse",
+      "TOURNAMENT_TEMPLATE_ID": "IqlObSRi",
+      "COUNTRY_ID": 139,
+      "COUNTRY_NAME": "Netherlands",
+      "TOURNAMENT_STAGE_ID": "2RxD2AE2",
+      "TOURNAMENT_TYPE": "p",
+      "TOURNAMENT_ID": "j3tq8GuO",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "139_IqlObSRi",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "Hoofdklasse",
+      "URL": "/baseball/netherlands/hoofdklasse/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/CKhNEBTp-8h3m9Lik.png",
+      "SORT": "13Netherlands 011rlands0080000000001000Hoofdklasse 011klasse000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "j3tq8GuO",
+      "CATEGORY_NAME": "Netherlands",
+      "EVENTS": [
+        {
+          "EVENT_ID": "WhIZb0Jr",
+          "START_TIME": 1749576600,
+          "START_UTIME": 1749576600,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Corendon Kinheim",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749587736,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "COR",
+          "HOME_PARTICIPANT_IDS": [
+            "YsR2Yorh"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Corendon Kinheim",
+          "HOME_PARTICIPANT_NAME_ONE": "Corendon Kinheim",
+          "HOME_EVENT_PARTICIPANT_ID": "McCbXnv1",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 8,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "3",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "2",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/0QNVBEg5-SzNhIUfS.png"
+          ],
+          "IMM": "61iNiXQr",
+          "IMW": "100",
+          "IMP": "8lPdFwFa-bsS5Zc1a.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "RCH",
+          "AWAY_PARTICIPANT_IDS": [
+            "61iNiXQr"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "RCH-Pinguins",
+          "AWAY_PARTICIPANT_NAME_ONE": "RCH-Pinguins",
+          "AWAY_EVENT_PARTICIPANT_ID": "UNF6VQ8D",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 13,
+          "AWAY_ERRORS": 2,
+          "AWAY_SCORE_CURRENT": "6",
+          "AWAY_SCORE_FULL": 6,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "4",
+          "AWAY_SCORE_PART_4": "1",
+          "AWAY_SCORE_PART_5": "1",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/8lPdFwFa-bsS5Zc1a.png"
+          ],
+          "INFO_NOTICE": "Completed early.",
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "0AR34MeL",
+          "START_TIME": 1749576600,
+          "START_UTIME": 1749576600,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Curacao Neptunus",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749587282,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "CUR",
+          "HOME_PARTICIPANT_IDS": [
+            "2JA8Arjo"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Curacao Neptunus",
+          "HOME_PARTICIPANT_NAME_ONE": "Curacao Neptunus",
+          "HOME_EVENT_PARTICIPANT_ID": "I1NKvVoR",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 11,
+          "HOME_ERRORS": 2,
+          "HOME_SCORE_CURRENT": "9",
+          "HOME_SCORE_PART_1": "3",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "5",
+          "HOME_SCORE_PART_6": "1",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/zoa396FG-SzNhIUfS.png"
+          ],
+          "IMM": "OWJFVqSA",
+          "IMW": "100",
+          "IMP": "EuWM1GzB-llUFgsdI.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "LDA",
+          "AWAY_PARTICIPANT_IDS": [
+            "OWJFVqSA"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "L&D Amsterdam",
+          "AWAY_PARTICIPANT_NAME_ONE": "L&D Amsterdam",
+          "AWAY_EVENT_PARTICIPANT_ID": "EX8jZ89l",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 6,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "4",
+          "AWAY_SCORE_FULL": 4,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "1",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "1",
+          "AWAY_SCORE_PART_5": "1",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "1",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/EuWM1GzB-llUFgsdI.png"
+          ],
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "South Korea: KBO",
+      "HEADER": "South Korea: KBO;182;44AfNseg",
+      "NAME_PART_1": "South Korea",
+      "NAME_PART_2": "KBO",
+      "TOURNAMENT_TEMPLATE_ID": "boA2KUSu",
+      "COUNTRY_ID": 106,
+      "COUNTRY_NAME": "South Korea",
+      "TOURNAMENT_STAGE_ID": "44AfNseg",
+      "TOURNAMENT_TYPE": "t",
+      "TOURNAMENT_ID": "dpyagJtC",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "106_boA2KUSu",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "KBO",
+      "URL": "/baseball/south-korea/kbo/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/b7HVDmTp-MXdyO5dJ.png",
+      "SORT": "13South Korea 011 Korea0000000000001000KBO         003......000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "dpyagJtC",
+      "CATEGORY_NAME": "South Korea",
+      "EVENTS": [
+        {
+          "EVENT_ID": "2Nwhvkee",
+          "START_TIME": 1749547800,
+          "START_UTIME": 1749547800,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Hanwha Eagles",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749558605,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "HAN",
+          "HOME_PARTICIPANT_IDS": [
+            "4tfKodg8"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Weiss R.",
+            8,
+            2
+          ],
+          "HOME_NAME": "Hanwha Eagles",
+          "HOME_PARTICIPANT_NAME_ONE": "Hanwha Eagles",
+          "HOME_EVENT_PARTICIPANT_ID": "2kDNQa8C",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 8,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "6",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "1",
+          "HOME_SCORE_PART_7": "5",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ClRH7kHG-6gO599rq.png"
+          ],
+          "IMM": "pGmPNh11",
+          "IMW": "100",
+          "IMP": "htyG9ZCr-UNFpXqCE.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "DOO",
+          "AWAY_PARTICIPANT_IDS": [
+            "pGmPNh11"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Irvin C.",
+            5,
+            6
+          ],
+          "AWAY_NAME": "Doosan Bears",
+          "AWAY_PARTICIPANT_NAME_ONE": "Doosan Bears",
+          "AWAY_EVENT_PARTICIPANT_ID": "z3BVOwwP",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 5,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "2",
+          "AWAY_SCORE_FULL": 2,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "2",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/htyG9ZCr-UNFpXqCE.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "APbDoX2L",
+          "START_TIME": 1749547800,
+          "START_UTIME": 1749547800,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "KIA Tigers",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749558665,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "TIG",
+          "HOME_PARTICIPANT_IDS": [
+            "rXhOpG8E"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Naile J.",
+            4,
+            2
+          ],
+          "HOME_NAME": "KIA Tigers",
+          "HOME_PARTICIPANT_NAME_ONE": "KIA Tigers",
+          "HOME_EVENT_PARTICIPANT_ID": "AFdlPnX7",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 4,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/lnckg1il-KppydT0S.png"
+          ],
+          "IMM": "O6nTMCG7",
+          "IMW": "100",
+          "IMP": "AgKvnmEa-ttCe13o4.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "SAM",
+          "AWAY_PARTICIPANT_IDS": [
+            "O6nTMCG7"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Choi Won-Tae",
+            5,
+            3
+          ],
+          "AWAY_NAME": "Samsung Lions",
+          "AWAY_PARTICIPANT_NAME_ONE": "Samsung Lions",
+          "AWAY_EVENT_PARTICIPANT_ID": "xMlzmjPE",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 8,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "8",
+          "AWAY_SCORE_FULL": 8,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "2",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "1",
+          "AWAY_SCORE_PART_8": "5",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/AgKvnmEa-ttCe13o4.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "t8kqtBQr",
+          "START_TIME": 1749547800,
+          "START_UTIME": 1749547800,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Kiwoom Heroes",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749561575,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "KIW",
+          "HOME_PARTICIPANT_IDS": [
+            "xjpHPEWl"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Kim Yun-Ha",
+            0,
+            9
+          ],
+          "HOME_NAME": "Kiwoom Heroes",
+          "HOME_PARTICIPANT_NAME_ONE": "Kiwoom Heroes",
+          "HOME_EVENT_PARTICIPANT_ID": "88B7Us9m",
+          "WINNER": 0,
+          "ODDS_WINNER": 0,
+          "ODDS_WINNER_OUTCOME": 3,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 9,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "2",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_SCORE_PART_X": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/d8m9edyS-lpOlJAuM.png"
+          ],
+          "IMM": "O6x8hD4U",
+          "IMW": "100",
+          "IMP": "I9IZPgjl-n7lBun76.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "NCD",
+          "AWAY_PARTICIPANT_IDS": [
+            "O6x8hD4U"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Allen L.",
+            3,
+            6
+          ],
+          "AWAY_NAME": "NC Dinos",
+          "AWAY_PARTICIPANT_NAME_ONE": "NC Dinos",
+          "AWAY_EVENT_PARTICIPANT_ID": "fP9FSLw0",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 12,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "2",
+          "AWAY_SCORE_FULL": 2,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "2",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_SCORE_PART_X": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/I9IZPgjl-n7lBun76.png"
+          ],
+          "INFO_NOTICE": "2 extra innings played.",
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "Ec54mgY8",
+          "START_TIME": 1749547800,
+          "START_UTIME": 1749547800,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "KT Wiz Suwon",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749558638,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "WIZ",
+          "HOME_PARTICIPANT_IDS": [
+            "444SNVEe"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Oh Won-Seok",
+            8,
+            3
+          ],
+          "HOME_NAME": "KT Wiz Suwon",
+          "HOME_PARTICIPANT_NAME_ONE": "KT Wiz Suwon",
+          "HOME_EVENT_PARTICIPANT_ID": "UyeYSUXr",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 18,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "12",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "4",
+          "HOME_SCORE_PART_4": "2",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "4",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ClJ8XkcM-l6Xd1LpL.png"
+          ],
+          "IMM": "pGw4ggkO",
+          "IMW": "100",
+          "IMP": "by1vZvvS-YaOcYfAR.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "LOT",
+          "AWAY_PARTICIPANT_IDS": [
+            "pGw4ggkO"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Park Se-Woong",
+            8,
+            5
+          ],
+          "AWAY_NAME": "Lotte Giants",
+          "AWAY_PARTICIPANT_NAME_ONE": "Lotte Giants",
+          "AWAY_EVENT_PARTICIPANT_ID": "2kgtR82e",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 9,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "3",
+          "AWAY_SCORE_FULL": 3,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "3",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/by1vZvvS-YaOcYfAR.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "M3IIPkt2",
+          "START_TIME": 1749547800,
+          "START_UTIME": 1749547800,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "LG Twins",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749559583,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_AWAY": "SSG",
+          "AWAY_PARTICIPANT_IDS": [
+            "fRfCQfHr"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Park Si-Hoo",
+            4,
+            0
+          ],
+          "AWAY_NAME": "SSG Landers",
+          "AWAY_PARTICIPANT_NAME_ONE": "SSG Landers",
+          "AWAY_EVENT_PARTICIPANT_ID": "0M42YjAL",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 13,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "6",
+          "AWAY_SCORE_FULL": 6,
+          "AWAY_SCORE_PART_1": "1",
+          "AWAY_SCORE_PART_2": "3",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "1",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "1",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/vR0BowyS-0bzciG9t.png"
+          ],
+          "IMM": "jglLOYoe",
+          "IMW": "100",
+          "IMP": "MTDsBjg5-pSBKlxzJ.png",
+          "IME": "",
+          "SHORTNAME_HOME": "TWI",
+          "HOME_PARTICIPANT_IDS": [
+            "jglLOYoe"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Son Ju-Young",
+            6,
+            5
+          ],
+          "HOME_NAME": "LG Twins",
+          "HOME_PARTICIPANT_NAME_ONE": "LG Twins",
+          "HOME_EVENT_PARTICIPANT_ID": "hd1fzDu9",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 3,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "2",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "2",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/MTDsBjg5-pSBKlxzJ.png"
+          ],
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "Taiwan: CPBL - First stage",
+      "HEADER": "Taiwan: CPBL - First stage;182;Umi1K2kf",
+      "NAME_PART_1": "Taiwan",
+      "NAME_PART_2": "CPBL - First stage",
+      "TOURNAMENT_TEMPLATE_ID": "I3K1mJmd",
+      "COUNTRY_ID": 218,
+      "COUNTRY_NAME": "Taiwan",
+      "TOURNAMENT_STAGE_ID": "Umi1K2kf",
+      "TOURNAMENT_TYPE": "p",
+      "TOURNAMENT_ID": "fZ59PFfH",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "218_I3K1mJmd",
+      "TOURNAMENT_STAGE_TYPE": 29,
+      "SHORT_NAME": "CPBL",
+      "URL": "/baseball/taiwan/cpbl/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/2ZYbtf7j-dveVl4qN.png",
+      "SORT": "13Taiwan      006Taiwan0000000000001000CPBL - First018 stage000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "fZ59PFfH",
+      "CATEGORY_NAME": "Taiwan",
+      "EVENTS": [
+        {
+          "EVENT_ID": "vXI8sxkS",
+          "START_TIME": 1749551700,
+          "START_UTIME": 1749551700,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Chinatrust Brothers",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749565353,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "CHI",
+          "HOME_PARTICIPANT_IDS": [
+            "SSEfUtBO"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Chinatrust Brothers",
+          "HOME_PARTICIPANT_NAME_ONE": "Chinatrust Brothers",
+          "HOME_EVENT_PARTICIPANT_ID": "KSWFk086",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 10,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "7",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "2",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "2",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "2",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/2FJ5qVYg-M9dMKp3f.png"
+          ],
+          "IMM": "pWORpTwn",
+          "IMW": "100",
+          "IMP": "GtTTJ4hl-vDP5czmt.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "TSG",
+          "AWAY_PARTICIPANT_IDS": [
+            "pWORpTwn"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "TSG Hawks",
+          "AWAY_PARTICIPANT_NAME_ONE": "TSG Hawks",
+          "AWAY_EVENT_PARTICIPANT_ID": "htVNmvwJ",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 15,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "10",
+          "AWAY_SCORE_FULL": 10,
+          "AWAY_SCORE_PART_1": "2",
+          "AWAY_SCORE_PART_2": "3",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "1",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "3",
+          "AWAY_SCORE_PART_9": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/GtTTJ4hl-vDP5czmt.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "O4fuxGCk",
+          "START_TIME": 1749551700,
+          "START_UTIME": 1749551700,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Rakuten Monkeys",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749564397,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "RAK",
+          "HOME_PARTICIPANT_IDS": [
+            "2JbKcTAr"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Rakuten Monkeys",
+          "HOME_PARTICIPANT_NAME_ONE": "Rakuten Monkeys",
+          "HOME_EVENT_PARTICIPANT_ID": "KnN9BsVP",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 7,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "3",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "3",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ETU2a6Cr-QHaedGFQ.png"
+          ],
+          "IMM": "IRL5wMoR",
+          "IMW": "100",
+          "IMP": "2qlHIQWg-2JC0wXwi.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "WEI",
+          "AWAY_PARTICIPANT_IDS": [
+            "IRL5wMoR"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Wei Chuan Dragons",
+          "AWAY_PARTICIPANT_NAME_ONE": "Wei Chuan Dragons",
+          "AWAY_EVENT_PARTICIPANT_ID": "l2Du6Lhm",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 16,
+          "AWAY_ERRORS": 2,
+          "AWAY_SCORE_CURRENT": "13",
+          "AWAY_SCORE_FULL": 13,
+          "AWAY_SCORE_PART_1": "2",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "5",
+          "AWAY_SCORE_PART_7": "1",
+          "AWAY_SCORE_PART_8": "2",
+          "AWAY_SCORE_PART_9": "3",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/2qlHIQWg-2JC0wXwi.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "WUcmzfs2",
+          "START_TIME": 1749551700,
+          "START_UTIME": 1749551700,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Uni Lions",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749562997,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "UNI",
+          "HOME_PARTICIPANT_IDS": [
+            "K4IjU2cC"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Uni Lions",
+          "HOME_PARTICIPANT_NAME_ONE": "Uni Lions",
+          "HOME_EVENT_PARTICIPANT_ID": "MFBm4aNa",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 9,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "6",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "1",
+          "HOME_SCORE_PART_3": "2",
+          "HOME_SCORE_PART_4": "1",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "1",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/OCv4RSxS-6q3ARfqR.png"
+          ],
+          "IMM": "EgjLEaZG",
+          "IMW": "100",
+          "IMP": "6gULyLeM-2JC0wXwi.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "FUB",
+          "AWAY_PARTICIPANT_IDS": [
+            "EgjLEaZG"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Fubon Guardians",
+          "AWAY_PARTICIPANT_NAME_ONE": "Fubon Guardians",
+          "AWAY_EVENT_PARTICIPANT_ID": "UuFe2whC",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 10,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "5",
+          "AWAY_SCORE_FULL": 5,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "1",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "3",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/6gULyLeM-2JC0wXwi.png"
+          ],
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "USA: MLB",
+      "HEADER": "USA: MLB;182;rBcHGKlJ",
+      "NAME_PART_1": "USA",
+      "NAME_PART_2": "MLB",
+      "TOURNAMENT_TEMPLATE_ID": "zcDLaZ3b",
+      "COUNTRY_ID": 200,
+      "COUNTRY_NAME": "USA",
+      "TOURNAMENT_STAGE_ID": "rBcHGKlJ",
+      "TOURNAMENT_TYPE": "t",
+      "TOURNAMENT_ID": "YP4DOZ9N",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "200_zcDLaZ3b",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "MLB",
+      "URL": "/baseball/usa/mlb/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/QPJ3alWI-pS3BMXxt.png",
+      "SORT": "13USA         003......0000000000001000MLB         003......000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "YP4DOZ9N",
+      "CATEGORY_NAME": "USA",
+      "EVENTS": [
+        {
+          "EVENT_ID": "bPT9YNcl",
+          "START_TIME": 1749510600,
+          "START_UTIME": 1749510600,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Boston Red Sox",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749524674,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_AWAY": "TAM",
+          "AWAY_PARTICIPANT_IDS": [
+            "GCHgI4hp"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Seymour I.",
+            1,
+            0
+          ],
+          "AWAY_NAME": "Tampa Bay Rays",
+          "AWAY_PARTICIPANT_NAME_ONE": "Tampa Bay Rays",
+          "AWAY_EVENT_PARTICIPANT_ID": "tOKp2lQH",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 12,
+          "AWAY_ERRORS": 2,
+          "AWAY_SCORE_CURRENT": "10",
+          "AWAY_SCORE_FULL": 10,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "1",
+          "AWAY_SCORE_PART_5": "2",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "3",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "1",
+          "AWAY_SCORE_PART_X": "3",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/lGlxbdyB-6yNDMrbJ.png"
+          ],
+          "IMM": "zaXTinF3",
+          "IMW": "100",
+          "IMP": "E92vTtZA-pjxqSmk4.png",
+          "IME": "",
+          "SHORTNAME_HOME": "BOS",
+          "HOME_PARTICIPANT_IDS": [
+            "zaXTinF3"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Kelly Z.",
+            1,
+            3
+          ],
+          "HOME_NAME": "Boston Red Sox",
+          "HOME_PARTICIPANT_NAME_ONE": "Boston Red Sox",
+          "HOME_EVENT_PARTICIPANT_ID": "YcHx4Ae5",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 10,
+          "HOME_ERRORS": 2,
+          "HOME_SCORE_CURRENT": "8",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "2",
+          "HOME_SCORE_PART_7": "2",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "2",
+          "HOME_SCORE_PART_X": "1",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/E92vTtZA-pjxqSmk4.png"
+          ],
+          "INFO_NOTICE": "2 extra innings played.",
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "tnSxxc4t",
+          "START_TIME": 1749512400,
+          "START_UTIME": 1749512400,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Milwaukee Brewers",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749521634,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "MIL",
+          "HOME_PARTICIPANT_IDS": [
+            "CGzqC60o"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Civale A.",
+            1,
+            2
+          ],
+          "HOME_NAME": "Milwaukee Brewers",
+          "HOME_PARTICIPANT_NAME_ONE": "Milwaukee Brewers",
+          "HOME_EVENT_PARTICIPANT_ID": "WfbQER9N",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 5,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "1",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "1",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/nitvFMWg-xIOhFH4B.png"
+          ],
+          "IMM": "0UPxbDYA",
+          "IMW": "100",
+          "IMP": "IPmhSoEa-r5trb9zO.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "ATL",
+          "AWAY_PARTICIPANT_IDS": [
+            "0UPxbDYA"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Sale C.",
+            4,
+            4
+          ],
+          "AWAY_NAME": "Atlanta Braves",
+          "AWAY_PARTICIPANT_NAME_ONE": "Atlanta Braves",
+          "AWAY_EVENT_PARTICIPANT_ID": "0Ald95Xp",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 11,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "7",
+          "AWAY_SCORE_FULL": 7,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "3",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "2",
+          "AWAY_SCORE_PART_9": "2",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/IPmhSoEa-r5trb9zO.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "4OD8ieGt",
+          "START_TIME": 1749512700,
+          "START_UTIME": 1749512700,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "St.Louis Cardinals",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749522940,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "STL",
+          "HOME_PARTICIPANT_IDS": [
+            "IDVz16ES"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Maton P.",
+            0,
+            2
+          ],
+          "HOME_NAME": "St.Louis Cardinals",
+          "HOME_PARTICIPANT_NAME_ONE": "St.Louis Cardinals",
+          "HOME_EVENT_PARTICIPANT_ID": "OSRuxfUN",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 7,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "4",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "4",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_SCORE_PART_X": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/6cQJ9nAr-pOg0ZmTB.png"
+          ],
+          "IMM": "zcDLaZ3b",
+          "IMW": "100",
+          "IMP": "ncOoVXBr-8Gs6bSZh.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "TOR",
+          "AWAY_PARTICIPANT_IDS": [
+            "zcDLaZ3b"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Rodriguez Y.",
+            1,
+            0
+          ],
+          "AWAY_NAME": "Toronto Blue Jays",
+          "AWAY_PARTICIPANT_NAME_ONE": "Toronto Blue Jays",
+          "AWAY_EVENT_PARTICIPANT_ID": "KbDBWXio",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 13,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "5",
+          "AWAY_SCORE_FULL": 5,
+          "AWAY_SCORE_PART_1": "1",
+          "AWAY_SCORE_PART_2": "1",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "1",
+          "AWAY_SCORE_PART_9": "1",
+          "AWAY_SCORE_PART_X": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ncOoVXBr-8Gs6bSZh.png"
+          ],
+          "INFO_NOTICE": "1 extra inning played.",
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "EaQpzyZh",
+          "START_TIME": 1749519480,
+          "START_UTIME": 1749519480,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Los Angeles Angels",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749528326,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "LAA",
+          "HOME_PARTICIPANT_IDS": [
+            "Mg9H0Flh"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Kikuchi Y.",
+            2,
+            5
+          ],
+          "HOME_NAME": "Los Angeles Angels",
+          "HOME_PARTICIPANT_NAME_ONE": "Los Angeles Angels",
+          "HOME_EVENT_PARTICIPANT_ID": "h4yrX8Pi",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 8,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "7",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "3",
+          "HOME_SCORE_PART_4": "1",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "3",
+          "HOME_SCORE_PART_9": "X",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/jmLVKEcM-4EsvakLH.png"
+          ],
+          "IMM": "xIYDcQid",
+          "IMW": "100",
+          "IMP": "OnC9Vnjl-4EsvakLH.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "ATH",
+          "AWAY_PARTICIPANT_IDS": [
+            "xIYDcQid"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Springs J.",
+            5,
+            5
+          ],
+          "AWAY_NAME": "Athletics",
+          "AWAY_PARTICIPANT_NAME_ONE": "Athletics",
+          "AWAY_EVENT_PARTICIPANT_ID": "0UvjVnf4",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 5,
+          "AWAY_ERRORS": 2,
+          "AWAY_SCORE_CURRENT": "4",
+          "AWAY_SCORE_FULL": 4,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "2",
+          "AWAY_SCORE_PART_9": "2",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/OnC9Vnjl-4EsvakLH.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "SxagWhYH",
+          "START_TIME": 1749519600,
+          "START_UTIME": 1749519600,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "Arizona Diamondbacks",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749532802,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "ARI",
+          "HOME_PARTICIPANT_IDS": [
+            "8bP2bXmH"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Morillo A.",
+            1,
+            0
+          ],
+          "HOME_NAME": "Arizona Diamondbacks",
+          "HOME_PARTICIPANT_NAME_ONE": "Arizona Diamondbacks",
+          "HOME_EVENT_PARTICIPANT_ID": "xhsyMrHj",
+          "WINNER": 1,
+          "ODDS_WINNER": 1,
+          "ODDS_WINNER_OUTCOME": 1,
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 10,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "8",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_SCORE_PART_3": "0",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "1",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "2",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_SCORE_PART_X": "4",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/Yg133Fg5-pnn58dSo.png"
+          ],
+          "IMM": "txYPhSac",
+          "IMW": "100",
+          "IMP": "YPyyksFG-CrchK1NQ.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "SEA",
+          "AWAY_PARTICIPANT_IDS": [
+            "txYPhSac"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Vargas C.",
+            1,
+            5
+          ],
+          "AWAY_NAME": "Seattle Mariners",
+          "AWAY_PARTICIPANT_NAME_ONE": "Seattle Mariners",
+          "AWAY_EVENT_PARTICIPANT_ID": "4bZMqn9c",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 12,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "4",
+          "AWAY_SCORE_FULL": 4,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "0",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "0",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "4",
+          "AWAY_SCORE_PART_X": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/YPyyksFG-CrchK1NQ.png"
+          ],
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "KCeoYE35",
+          "START_TIME": 1749519600,
+          "START_UTIME": 1749519600,
+          "STAGE_TYPE": "FINISHED",
+          "MERGE_STAGE_TYPE": "FINISHED",
+          "STAGE": "FINISHED",
+          "SORT": "San Diego Padres",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749531324,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "SAN",
+          "HOME_PARTICIPANT_IDS": [
+            "8poQN9Ud"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Peralta W.",
+            3,
+            1
+          ],
+          "HOME_NAME": "San Diego Padres",
+          "HOME_PARTICIPANT_NAME_ONE": "San Diego Padres",
+          "HOME_EVENT_PARTICIPANT_ID": "8frbTQOG",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 7,
+          "HOME_ERRORS": 2,
+          "HOME_SCORE_CURRENT": "7",
+          "HOME_SCORE_PART_1": "2",
+          "HOME_SCORE_PART_2": "1",
+          "HOME_SCORE_PART_3": "3",
+          "HOME_SCORE_PART_4": "0",
+          "HOME_SCORE_PART_5": "0",
+          "HOME_SCORE_PART_6": "0",
+          "HOME_SCORE_PART_7": "0",
+          "HOME_SCORE_PART_8": "0",
+          "HOME_SCORE_PART_9": "0",
+          "HOME_SCORE_PART_X": "1",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/YsFz7vWg-plL3Lm41.png"
+          ],
+          "IMM": "nwPDBpVc",
+          "IMW": "100",
+          "IMP": "YeWStKhl-xUjXmOIP.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "LAD",
+          "AWAY_PARTICIPANT_IDS": [
+            "nwPDBpVc"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Yates K.",
+            4,
+            2
+          ],
+          "AWAY_NAME": "Los Angeles Dodgers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Los Angeles Dodgers",
+          "AWAY_EVENT_PARTICIPANT_ID": "t8t6R4gT",
+          "WINNER": 2,
+          "ODDS_WINNER": 2,
+          "ODDS_WINNER_OUTCOME": 2,
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 12,
+          "AWAY_ERRORS": 1,
+          "AWAY_SCORE_CURRENT": "8",
+          "AWAY_SCORE_FULL": 8,
+          "AWAY_SCORE_PART_1": "2",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_SCORE_PART_3": "3",
+          "AWAY_SCORE_PART_4": "0",
+          "AWAY_SCORE_PART_5": "1",
+          "AWAY_SCORE_PART_6": "0",
+          "AWAY_SCORE_PART_7": "0",
+          "AWAY_SCORE_PART_8": "0",
+          "AWAY_SCORE_PART_9": "0",
+          "AWAY_SCORE_PART_X": "2",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/YeWStKhl-xUjXmOIP.png"
+          ],
+          "INFO_NOTICE": "1 extra inning played.",
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "vHSBlzln",
+          "START_TIME": 1749594900,
+          "START_UTIME": 1749594900,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Baltimore Orioles",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749595811,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "BAL",
+          "HOME_PARTICIPANT_IDS": [
+            "EcZwBi3N"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Povich C.",
+            1,
+            4
+          ],
+          "HOME_NAME": "Baltimore Orioles",
+          "HOME_PARTICIPANT_NAME_ONE": "Baltimore Orioles",
+          "HOME_EVENT_PARTICIPANT_ID": "l82ANehe",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dWIh4Til-8toS1iya.png"
+          ],
+          "IMM": "0QIlt8pi",
+          "IMW": "100",
+          "IMP": "WC5CNNGG-nXqW0Bj5.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "DET",
+          "AWAY_PARTICIPANT_IDS": [
+            "0QIlt8pi"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Hurter B.",
+            2,
+            1
+          ],
+          "AWAY_NAME": "Detroit Tigers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Detroit Tigers",
+          "AWAY_EVENT_PARTICIPANT_ID": "ML0ILZM7",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 1,
+          "AWAY_ERRORS": 1,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 1,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/WC5CNNGG-nXqW0Bj5.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/15/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-15.png",
+                "BN": "William Hill",
+                "BI": 15
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "lhm2UW2U",
+          "START_TIME": 1749595200,
+          "START_UTIME": 1749595200,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Cleveland Guardians",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749595809,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_AWAY": "CIN",
+          "AWAY_PARTICIPANT_IDS": [
+            "EkWXj6U9"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Abbott A.",
+            5,
+            1
+          ],
+          "AWAY_NAME": "Cincinnati Reds",
+          "AWAY_PARTICIPANT_NAME_ONE": "Cincinnati Reds",
+          "AWAY_EVENT_PARTICIPANT_ID": "rBa2PHNr",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 0,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "0",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/tUgxR1zB-MyFeHWzn.png"
+          ],
+          "IMM": "4K05MrFG",
+          "IMW": "100",
+          "IMP": "CMe9zXzS-QNrz0V5B.png",
+          "IME": "",
+          "SHORTNAME_HOME": "CLE",
+          "HOME_PARTICIPANT_IDS": [
+            "4K05MrFG"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Cecconi S.",
+            1,
+            2
+          ],
+          "HOME_NAME": "Cleveland Guardians",
+          "HOME_PARTICIPANT_NAME_ONE": "Cleveland Guardians",
+          "HOME_EVENT_PARTICIPANT_ID": "xCXUsQwA",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 1,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/CMe9zXzS-QNrz0V5B.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "Yw47wAuo",
+          "START_TIME": 1749595200,
+          "START_UTIME": 1749595200,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Pittsburgh Pirates",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749596008,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "PIT",
+          "HOME_PARTICIPANT_IDS": [
+            "tr9K2SqG"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Keller M.",
+            1,
+            8
+          ],
+          "HOME_NAME": "Pittsburgh Pirates",
+          "HOME_PARTICIPANT_NAME_ONE": "Pittsburgh Pirates",
+          "HOME_EVENT_PARTICIPANT_ID": "AsNFjfMs",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 1,
+          "HOME_ERRORS": 0,
+          "SERVICE": 2,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/4jc6udhl-MyFeHWzn.png"
+          ],
+          "IMM": "ddxzWOqT",
+          "IMW": "100",
+          "IMP": "riFAKCzS-buTcgQo3.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "MIA",
+          "AWAY_PARTICIPANT_IDS": [
+            "ddxzWOqT"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Alcantara S.",
+            2,
+            7
+          ],
+          "AWAY_NAME": "Miami Marlins",
+          "AWAY_PARTICIPANT_NAME_ONE": "Miami Marlins",
+          "AWAY_EVENT_PARTICIPANT_ID": "2kuNlYjf",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 0,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "0",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/riFAKCzS-buTcgQo3.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {},
+          "HOME_SCORE_PART_2": "0"
+        },
+        {
+          "EVENT_ID": "2eDyqWHN",
+          "START_TIME": 1749595500,
+          "START_UTIME": 1749595500,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Philadelphia Phillies",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 1,
+          "STAGE_START_TIME": 1749596578,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "PHI",
+          "HOME_PARTICIPANT_IDS": [
+            "QTNHA4p4"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Abel M.",
+            1,
+            0
+          ],
+          "HOME_NAME": "Philadelphia Phillies",
+          "HOME_PARTICIPANT_NAME_ONE": "Philadelphia Phillies",
+          "HOME_EVENT_PARTICIPANT_ID": "n5qbYC6D",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 2,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/AcX8PwzB-r5trb9zO.png"
+          ],
+          "IMM": "j7ZnBQFi",
+          "IMW": "100",
+          "IMP": "nFvRbjHG-MyFeHWzn.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "CHC",
+          "AWAY_PARTICIPANT_IDS": [
+            "j7ZnBQFi"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Rea C.",
+            4,
+            2
+          ],
+          "AWAY_NAME": "Chicago Cubs",
+          "AWAY_PARTICIPANT_NAME_ONE": "Chicago Cubs",
+          "AWAY_EVENT_PARTICIPANT_ID": "vaWqdGbK",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 1,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 1,
+          "AWAY_SCORE_CURRENT": "0",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/nFvRbjHG-MyFeHWzn.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/5/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-5.png",
+                "BN": "Unibet",
+                "BI": 5
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {},
+          "UPDATEINDEXES_PERIOD_UPDATE_UTIME": 1749596578,
+          "AWAY_SCORE_PART_2": "0"
+        },
+        {
+          "EVENT_ID": "6TJSphmB",
+          "START_TIME": 1749597000,
+          "START_UTIME": 1749597000,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Boston Red Sox",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "BOS",
+          "HOME_PARTICIPANT_IDS": [
+            "zaXTinF3"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Giolito L.",
+            1,
+            1
+          ],
+          "HOME_NAME": "Boston Red Sox",
+          "HOME_PARTICIPANT_NAME_ONE": "Boston Red Sox",
+          "HOME_EVENT_PARTICIPANT_ID": "hOsrxe7l",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/E92vTtZA-pjxqSmk4.png"
+          ],
+          "IMM": "GCHgI4hp",
+          "IMW": "100",
+          "IMP": "lGlxbdyB-6yNDMrbJ.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "TAM",
+          "AWAY_PARTICIPANT_IDS": [
+            "GCHgI4hp"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Pepiot R.",
+            3,
+            5
+          ],
+          "AWAY_NAME": "Tampa Bay Rays",
+          "AWAY_PARTICIPANT_NAME_ONE": "Tampa Bay Rays",
+          "AWAY_EVENT_PARTICIPANT_ID": "vutjzZy1",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 0,
+          "AWAY_ERRORS": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/lGlxbdyB-6yNDMrbJ.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/15/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-15.png",
+                "BN": "William Hill",
+                "BI": 15
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "YFLKnEIb",
+          "START_TIME": 1749597000,
+          "START_UTIME": 1749597000,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "New York Mets",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "NYM",
+          "HOME_PARTICIPANT_IDS": [
+            "I5wWW4UM"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Canning G.",
+            6,
+            2
+          ],
+          "HOME_NAME": "New York Mets",
+          "HOME_PARTICIPANT_NAME_ONE": "New York Mets",
+          "HOME_EVENT_PARTICIPANT_ID": "lSh4qwFE",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ID1PVAjl-MyFeHWzn.png"
+          ],
+          "IMM": "CE026gRp",
+          "IMW": "100",
+          "IMP": "niIgU2Ca-x4HIlj1S.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "WAS",
+          "AWAY_PARTICIPANT_IDS": [
+            "CE026gRp"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Gore M.",
+            3,
+            5
+          ],
+          "AWAY_NAME": "Washington Nationals",
+          "AWAY_PARTICIPANT_NAME_ONE": "Washington Nationals",
+          "AWAY_EVENT_PARTICIPANT_ID": "dhdCsHqR",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 0,
+          "AWAY_ERRORS": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/niIgU2Ca-x4HIlj1S.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "dIYAcVWG",
+          "START_TIME": 1749598800,
+          "START_UTIME": 1749598800,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Kansas City Royals",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "KAN",
+          "HOME_PARTICIPANT_IDS": [
+            "IL2QbgJ4"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Cameron N.",
+            2,
+            1
+          ],
+          "HOME_NAME": "Kansas City Royals",
+          "HOME_PARTICIPANT_NAME_ONE": "Kansas City Royals",
+          "HOME_EVENT_PARTICIPANT_ID": "hMI21Bz0",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dWjjpIxS-QNrz0V5B.png"
+          ],
+          "IMM": "SrC4LDIT",
+          "IMW": "100",
+          "IMP": "plT1Aqil-OpJ5uAOg.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "NYY",
+          "AWAY_PARTICIPANT_IDS": [
+            "SrC4LDIT"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Fried M.",
+            8,
+            1
+          ],
+          "AWAY_NAME": "New York Yankees",
+          "AWAY_PARTICIPANT_NAME_ONE": "New York Yankees",
+          "AWAY_EVENT_PARTICIPANT_ID": "0nMAak5C",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/plT1Aqil-OpJ5uAOg.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              },
+              {
+                "TVI": 1235,
+                "BU": "https://www.tntsports.co.uk/",
+                "BN": "TNT Sports 1"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/15/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-15.png",
+                "BN": "William Hill",
+                "BI": 15
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "UVWIe91T",
+          "START_TIME": 1749598800,
+          "START_UTIME": 1749598800,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Milwaukee Brewers",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "MIL",
+          "HOME_PARTICIPANT_IDS": [
+            "CGzqC60o"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Priester Q.",
+            3,
+            2
+          ],
+          "HOME_NAME": "Milwaukee Brewers",
+          "HOME_PARTICIPANT_NAME_ONE": "Milwaukee Brewers",
+          "HOME_EVENT_PARTICIPANT_ID": "YaKIcTZO",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/nitvFMWg-xIOhFH4B.png"
+          ],
+          "IMM": "0UPxbDYA",
+          "IMW": "100",
+          "IMP": "IPmhSoEa-r5trb9zO.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "ATL",
+          "AWAY_PARTICIPANT_IDS": [
+            "0UPxbDYA"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Holmes G.",
+            3,
+            4
+          ],
+          "AWAY_NAME": "Atlanta Braves",
+          "AWAY_PARTICIPANT_NAME_ONE": "Atlanta Braves",
+          "AWAY_EVENT_PARTICIPANT_ID": "OOaSHWKt",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/IPmhSoEa-r5trb9zO.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "EZtf1DXi",
+          "START_TIME": 1749598800,
+          "START_UTIME": 1749598800,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Minnesota Twins",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "MIN",
+          "HOME_PARTICIPANT_IDS": [
+            "OjWW1naM"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Woods Richardson S.",
+            2,
+            2
+          ],
+          "HOME_NAME": "Minnesota Twins",
+          "HOME_PARTICIPANT_NAME_ONE": "Minnesota Twins",
+          "HOME_EVENT_PARTICIPANT_ID": "z3wVnCL6",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/48zwVQil-hf8mqtOe.png"
+          ],
+          "IMM": "f3GcHO7j",
+          "IMW": "100",
+          "IMP": "jq5P2KYg-dC4XBro4.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "TEX",
+          "AWAY_PARTICIPANT_IDS": [
+            "f3GcHO7j"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Mahle T.",
+            5,
+            3
+          ],
+          "AWAY_NAME": "Texas Rangers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Texas Rangers",
+          "AWAY_EVENT_PARTICIPANT_ID": "rTtwojjJ",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/jq5P2KYg-dC4XBro4.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/5/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-5.png",
+                "BN": "Unibet",
+                "BI": 5
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "0j7HkZpg",
+          "START_TIME": 1749599100,
+          "START_UTIME": 1749599100,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "St.Louis Cardinals",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "STL",
+          "HOME_PARTICIPANT_IDS": [
+            "IDVz16ES"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Mikolas M.",
+            4,
+            2
+          ],
+          "HOME_NAME": "St.Louis Cardinals",
+          "HOME_PARTICIPANT_NAME_ONE": "St.Louis Cardinals",
+          "HOME_EVENT_PARTICIPANT_ID": "n55cfyph",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/6cQJ9nAr-pOg0ZmTB.png"
+          ],
+          "IMM": "zcDLaZ3b",
+          "IMW": "100",
+          "IMP": "ncOoVXBr-8Gs6bSZh.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "TOR",
+          "AWAY_PARTICIPANT_IDS": [
+            "zcDLaZ3b"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Bassitt C.",
+            6,
+            3
+          ],
+          "AWAY_NAME": "Toronto Blue Jays",
+          "AWAY_PARTICIPANT_NAME_ONE": "Toronto Blue Jays",
+          "AWAY_EVENT_PARTICIPANT_ID": "h285hFE4",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ncOoVXBr-8Gs6bSZh.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/15/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-15.png",
+                "BN": "William Hill",
+                "BI": 15
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "0ju2ai24",
+          "START_TIME": 1749600600,
+          "START_UTIME": 1749600600,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Houston Astros",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_AWAY": "CWS",
+          "AWAY_PARTICIPANT_IDS": [
+            "SW9D1eZo"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Smith S.",
+            2,
+            3
+          ],
+          "AWAY_NAME": "Chicago White Sox",
+          "AWAY_PARTICIPANT_NAME_ONE": "Chicago White Sox",
+          "AWAY_EVENT_PARTICIPANT_ID": "65Kf3X5m",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/rHrt6LAr-QNrz0V5B.png"
+          ],
+          "IMM": "lfZXonNq",
+          "IMW": "100",
+          "IMP": "KUkA1be5-MyFeHWzn.png",
+          "IME": "",
+          "SHORTNAME_HOME": "HOU",
+          "HOME_PARTICIPANT_IDS": [
+            "lfZXonNq"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "McCullers L.",
+            1,
+            1
+          ],
+          "HOME_NAME": "Houston Astros",
+          "HOME_PARTICIPANT_NAME_ONE": "Houston Astros",
+          "HOME_EVENT_PARTICIPANT_ID": "AZYO8grQ",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/KUkA1be5-MyFeHWzn.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              },
+              {
+                "BU": "/bookmaker/5/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-5.png",
+                "BN": "Unibet",
+                "BI": 5
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "lGDkjmPj",
+          "START_TIME": 1749602400,
+          "START_UTIME": 1749602400,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Colorado Rockies",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 1,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "COL",
+          "HOME_PARTICIPANT_IDS": [
+            "naYhNOaA"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_PITCHER": [
+            "Palmquist C.",
+            0,
+            4
+          ],
+          "HOME_NAME": "Colorado Rockies",
+          "HOME_PARTICIPANT_NAME_ONE": "Colorado Rockies",
+          "HOME_EVENT_PARTICIPANT_ID": "UL2zGAkg",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/nizqvCEa-GtB7EUK4.png"
+          ],
+          "IMM": "bRZ9b6xj",
+          "IMW": "100",
+          "IMP": "faj1OHdM-0nhPzxiE.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "SFG",
+          "AWAY_PARTICIPANT_IDS": [
+            "bRZ9b6xj"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_PITCHER": [
+            "Harrison K.",
+            1,
+            1
+          ],
+          "AWAY_NAME": "San Francisco Giants",
+          "AWAY_PARTICIPANT_NAME_ONE": "San Francisco Giants",
+          "AWAY_EVENT_PARTICIPANT_ID": "2Z0rElK5",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/faj1OHdM-0nhPzxiE.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "1": [
+              {
+                "TVI": 2527,
+                "BU": "https://www.mlb.com/live-stream-games",
+                "BN": "MLB.TV"
+              }
+            ],
+            "2": [
+              {
+                "BU": "/bookmaker/16/?from=live-streaming&sport=6",
+                "IU": "https://static.flashscore.com/res/image/data/bookmakers/17-16.png",
+                "BN": "bet365*",
+                "BI": 16,
+                "BT": "GEO restrictions apply. Funded account required or to have placed a bet in the last 24 hours. GamblingTherapy.org. 18+"
+              }
+            ]
+          },
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16",
+            "28"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 1,
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "USA: IL - First stage",
+      "HEADER": "USA: IL - First stage;182;8CqbXDkU",
+      "NAME_PART_1": "USA",
+      "NAME_PART_2": "IL - First stage",
+      "TOURNAMENT_TEMPLATE_ID": "WExoOyMO",
+      "COUNTRY_ID": 200,
+      "COUNTRY_NAME": "USA",
+      "TOURNAMENT_STAGE_ID": "8CqbXDkU",
+      "TOURNAMENT_TYPE": "p",
+      "TOURNAMENT_ID": "Msghkzy8",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "200_WExoOyMO",
+      "TOURNAMENT_STAGE_TYPE": 29,
+      "SHORT_NAME": "IL",
+      "URL": "/baseball/usa/il/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/SvgCpaSp-hdaoIz8q.png",
+      "SORT": "13USA         003......0050000000001000IL - First s016 stage000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "Msghkzy8",
+      "CATEGORY_NAME": "USA",
+      "EVENTS": [
+        {
+          "EVENT_ID": "6e0qxTCm",
+          "START_TIME": 1749594900,
+          "START_UTIME": 1749594900,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Buffalo Bisons",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749595791,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "BUF",
+          "HOME_PARTICIPANT_IDS": [
+            "dtAJRFZ6"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Buffalo Bisons",
+          "HOME_PARTICIPANT_NAME_ONE": "Buffalo Bisons",
+          "HOME_EVENT_PARTICIPANT_ID": "r7RY1KR1",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 1,
+          "HOME_ERRORS": 1,
+          "HOME_SCORE_CURRENT": "1",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/xz8BsREG-8M0QvRW9.png"
+          ],
+          "IMM": "0MxYtSP4",
+          "IMW": "100",
+          "IMP": "bPVP6NcM-M94ANg7l.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "COL",
+          "AWAY_PARTICIPANT_IDS": [
+            "0MxYtSP4"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Columbus Clippers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Columbus Clippers",
+          "AWAY_EVENT_PARTICIPANT_ID": "z1EKPNJ8",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 2,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "2",
+          "AWAY_SCORE_FULL": 2,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "2",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/bPVP6NcM-M94ANg7l.png"
+          ],
+          "AN": "y",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "v9biz7s0",
+          "START_TIME": 1749594900,
+          "START_UTIME": 1749594900,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Durham Bulls",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749595573,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_AWAY": "CHA",
+          "AWAY_PARTICIPANT_IDS": [
+            "j7g4wgJC"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Charlotte Knights",
+          "AWAY_PARTICIPANT_NAME_ONE": "Charlotte Knights",
+          "AWAY_EVENT_PARTICIPANT_ID": "E98bIuCr",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 3,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 1,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/48MPThFa-UV1Mu7H3.png"
+          ],
+          "IMM": "67L9SlsS",
+          "IMW": "100",
+          "IMP": "dOVRHJjl-003EMDMf.png",
+          "IME": "",
+          "SHORTNAME_HOME": "DUR",
+          "HOME_PARTICIPANT_IDS": [
+            "67L9SlsS"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Durham Bulls",
+          "HOME_PARTICIPANT_NAME_ONE": "Durham Bulls",
+          "HOME_EVENT_PARTICIPANT_ID": "rRHSN1lL",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dOVRHJjl-003EMDMf.png"
+          ],
+          "AN": "y",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "EoqTQpKh",
+          "START_TIME": 1749594900,
+          "START_UTIME": 1749594900,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Norfolk Tides",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749595704,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "NOR",
+          "HOME_PARTICIPANT_IDS": [
+            "tKMWrleh"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Norfolk Tides",
+          "HOME_PARTICIPANT_NAME_ONE": "Norfolk Tides",
+          "HOME_EVENT_PARTICIPANT_ID": "rimfRzeD",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "1",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "1",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/ETz9aTAr-8M0QvRW9.png"
+          ],
+          "IMM": "Ee1zwngE",
+          "IMW": "100",
+          "IMP": "fiU57UYg-4fcxxPGS.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "NAS",
+          "AWAY_PARTICIPANT_IDS": [
+            "Ee1zwngE"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Nashville Sounds",
+          "AWAY_PARTICIPANT_NAME_ONE": "Nashville Sounds",
+          "AWAY_EVENT_PARTICIPANT_ID": "AcutkvmK",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 0,
+          "AWAY_ERRORS": 1,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "0",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/fiU57UYg-4fcxxPGS.png"
+          ],
+          "AN": "y",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "6yI0WOtP",
+          "START_TIME": 1749594900,
+          "START_UTIME": 1749594900,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Scranton/WB",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749595793,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "SCR",
+          "HOME_PARTICIPANT_IDS": [
+            "K25hryKm"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Scranton/WB",
+          "HOME_PARTICIPANT_NAME_ONE": "Scranton/WB",
+          "HOME_EVENT_PARTICIPANT_ID": "0pc0x13E",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_SCORE_PART_2": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/8teVLCg5-lj37gIVQ.png"
+          ],
+          "IMM": "0I0iteZg",
+          "IMW": "100",
+          "IMP": "pvGRLBZA-xlVLYr48.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "SYR",
+          "AWAY_PARTICIPANT_IDS": [
+            "0I0iteZg"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Syracuse Mets",
+          "AWAY_PARTICIPANT_NAME_ONE": "Syracuse Mets",
+          "AWAY_EVENT_PARTICIPANT_ID": "Yce8zuYQ",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 2,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "0",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "0",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/pvGRLBZA-xlVLYr48.png"
+          ],
+          "AN": "y",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "feiyPOl5",
+          "START_TIME": 1749595500,
+          "START_UTIME": 1749595500,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "FIRST_INNING",
+          "SORT": "Lehigh Valley IronPigs",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749595784,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "LEH",
+          "HOME_PARTICIPANT_IDS": [
+            "tYoSP8ir"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Lehigh Valley IronPigs",
+          "HOME_PARTICIPANT_NAME_ONE": "Lehigh Valley IronPigs",
+          "HOME_EVENT_PARTICIPANT_ID": "ttWBqIAs",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "1",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/CSDIliZg-003EMDMf.png"
+          ],
+          "IMM": "UJSe7Xug",
+          "IMW": "100",
+          "IMP": "2uhsijf5-Gd9MHnhe.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "WOR",
+          "AWAY_PARTICIPANT_IDS": [
+            "UJSe7Xug"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Worcester",
+          "AWAY_PARTICIPANT_NAME_ONE": "Worcester",
+          "AWAY_EVENT_PARTICIPANT_ID": "EgUJsduf",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 2,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 2,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 1,
+          "AWAY_SCORE_PART_1": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/2uhsijf5-Gd9MHnhe.png"
+          ],
+          "AN": "y",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "6LuLS6kt",
+          "START_TIME": 1749595500,
+          "START_UTIME": 1749595500,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Rochester Red Wings",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749596473,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "ROC",
+          "HOME_PARTICIPANT_IDS": [
+            "Qu6lqH4s"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Rochester Red Wings",
+          "HOME_PARTICIPANT_NAME_ONE": "Rochester Red Wings",
+          "HOME_EVENT_PARTICIPANT_ID": "4tnvVIel",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 0,
+          "HOME_ERRORS": 0,
+          "HOME_SCORE_CURRENT": "0",
+          "HOME_SCORE_PART_1": "0",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/G8YsGXkl-G0Lud5o3.png"
+          ],
+          "IMM": "QoM45BA5",
+          "IMW": "100",
+          "IMP": "O41BgbYg-Gd9MHnhe.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "JAC",
+          "AWAY_PARTICIPANT_IDS": [
+            "QoM45BA5"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Jacksonville",
+          "AWAY_PARTICIPANT_NAME_ONE": "Jacksonville",
+          "AWAY_EVENT_PARTICIPANT_ID": "AwknTdQ0",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 4,
+          "AWAY_ERRORS": 0,
+          "SERVICE": 1,
+          "AWAY_SCORE_CURRENT": "3",
+          "AWAY_SCORE_FULL": 3,
+          "AWAY_SCORE_PART_1": "3",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/O41BgbYg-Gd9MHnhe.png"
+          ],
+          "AN": "y",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {},
+          "UPDATEINDEXES_PERIOD_UPDATE_UTIME": 1749596473,
+          "AWAY_SCORE_PART_2": "0"
+        },
+        {
+          "EVENT_ID": "nBJCskkQ",
+          "START_TIME": 1749596700,
+          "START_UTIME": 1749596700,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Gwinnett Stripers",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "GWI",
+          "HOME_PARTICIPANT_IDS": [
+            "ncNSqUun"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Gwinnett Stripers",
+          "HOME_PARTICIPANT_NAME_ONE": "Gwinnett Stripers",
+          "HOME_EVENT_PARTICIPANT_ID": "p0sfMlDG",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/beovcLWg-8M0QvRW9.png"
+          ],
+          "IMM": "dzkpE2GD",
+          "IMW": "100",
+          "IMP": "SvmyHwdM-Q3bYx51M.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "MEM",
+          "AWAY_PARTICIPANT_IDS": [
+            "dzkpE2GD"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Memphis Redbirds",
+          "AWAY_PARTICIPANT_NAME_ONE": "Memphis Redbirds",
+          "AWAY_EVENT_PARTICIPANT_ID": "ja9R3tck",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/SvmyHwdM-Q3bYx51M.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "S8kqN2JH",
+          "START_TIME": 1749596700,
+          "START_UTIME": 1749596700,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Indianapolis Indians",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "IND",
+          "HOME_PARTICIPANT_IDS": [
+            "rVaptnuB"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Indianapolis Indians",
+          "HOME_PARTICIPANT_NAME_ONE": "Indianapolis Indians",
+          "HOME_EVENT_PARTICIPANT_ID": "nLsRuzA6",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/6gTC11YA-M94ANg7l.png"
+          ],
+          "IMM": "IgvC3kuI",
+          "IMW": "100",
+          "IMP": "SEsGChcM-jDjEgSHk.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "ST.",
+          "AWAY_PARTICIPANT_IDS": [
+            "IgvC3kuI"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "St. Paul",
+          "AWAY_PARTICIPANT_NAME_ONE": "St. Paul",
+          "AWAY_EVENT_PARTICIPANT_ID": "fooZwEvJ",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/SEsGChcM-jDjEgSHk.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "bBEhYpCC",
+          "START_TIME": 1749596700,
+          "START_UTIME": 1749596700,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Toledo Mud Hens",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "TOL",
+          "HOME_PARTICIPANT_IDS": [
+            "Ch6mrUtF"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Toledo Mud Hens",
+          "HOME_PARTICIPANT_NAME_ONE": "Toledo Mud Hens",
+          "HOME_EVENT_PARTICIPANT_ID": "nN66GJte",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/CGgwyEFG-zX0RLoyA.png"
+          ],
+          "IMM": "KE1pMnKe",
+          "IMW": "100",
+          "IMP": "6X6GyiWg-KlUgf6Wd.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "OMA",
+          "AWAY_PARTICIPANT_IDS": [
+            "KE1pMnKe"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Omaha Storm Chasers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Omaha Storm Chasers",
+          "AWAY_EVENT_PARTICIPANT_ID": "Yw5EEcB7",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/6X6GyiWg-KlUgf6Wd.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "M97H4f3j",
+          "START_TIME": 1749598680,
+          "START_UTIME": 1749598680,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Iowa Cubs",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "IOW",
+          "HOME_PARTICIPANT_IDS": [
+            "p0otFr17"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Iowa Cubs",
+          "HOME_PARTICIPANT_NAME_ONE": "Iowa Cubs",
+          "HOME_EVENT_PARTICIPANT_ID": "nuYK1HWP",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/v39XhBdM-2JKzUeUK.png"
+          ],
+          "IMM": "je3hvQ9N",
+          "IMW": "100",
+          "IMP": "vw3he4Yg-UV1Mu7H3.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "LOU",
+          "AWAY_PARTICIPANT_IDS": [
+            "je3hvQ9N"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Louisville Bats",
+          "AWAY_PARTICIPANT_NAME_ONE": "Louisville Bats",
+          "AWAY_EVENT_PARTICIPANT_ID": "INOjdefm",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/vw3he4Yg-UV1Mu7H3.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "USA: PCL - First stage",
+      "HEADER": "USA: PCL - First stage;182;MqZf7TQq",
+      "NAME_PART_1": "USA",
+      "NAME_PART_2": "PCL - First stage",
+      "TOURNAMENT_TEMPLATE_ID": "hOwsPH6I",
+      "COUNTRY_ID": 200,
+      "COUNTRY_NAME": "USA",
+      "TOURNAMENT_STAGE_ID": "MqZf7TQq",
+      "TOURNAMENT_TYPE": "p",
+      "TOURNAMENT_ID": "zmfC3DKD",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "200_hOwsPH6I",
+      "TOURNAMENT_STAGE_TYPE": 29,
+      "SHORT_NAME": "PCL",
+      "URL": "/baseball/usa/pcl/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/KWjyWSA7-4zq3Va0j.png",
+      "SORT": "13USA         003......0060000000001000PCL - First 017 stage000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "zmfC3DKD",
+      "CATEGORY_NAME": "USA",
+      "EVENTS": [
+        {
+          "EVENT_ID": "KtmRRhhA",
+          "START_TIME": 1749600900,
+          "START_UTIME": 1749600900,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Round Rock Express",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "ROU",
+          "HOME_PARTICIPANT_IDS": [
+            "bVqTHyN5"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Round Rock Express",
+          "HOME_PARTICIPANT_NAME_ONE": "Round Rock Express",
+          "HOME_EVENT_PARTICIPANT_ID": "ddQb7EbU",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/6uJSH1dM-6HENw1MK.png"
+          ],
+          "IMM": "CEs4lOLk",
+          "IMW": "100",
+          "IMP": "tWjqMQYA-63q4XrPq.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "ELP",
+          "AWAY_PARTICIPANT_IDS": [
+            "CEs4lOLk"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "El Paso Chihuahuas",
+          "AWAY_PARTICIPANT_NAME_ONE": "El Paso Chihuahuas",
+          "AWAY_EVENT_PARTICIPANT_ID": "nL58RHqn",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/tWjqMQYA-63q4XrPq.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "S6jZPWMM",
+          "START_TIME": 1749602100,
+          "START_UTIME": 1749602100,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Albuquerque Isotopes",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "ALB",
+          "HOME_PARTICIPANT_IDS": [
+            "8dJ8Kwwm"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Albuquerque Isotopes",
+          "HOME_PARTICIPANT_NAME_ONE": "Albuquerque Isotopes",
+          "HOME_EVENT_PARTICIPANT_ID": "KY3GPeEb",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dKXGOoh5-2JKzUeUK.png"
+          ],
+          "IMM": "tAHGIH7a",
+          "IMW": "100",
+          "IMP": "8rdwhzHG-Q3bYx51M.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "OKL",
+          "AWAY_PARTICIPANT_IDS": [
+            "tAHGIH7a"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Oklahoma City Dodgers",
+          "AWAY_PARTICIPANT_NAME_ONE": "Oklahoma City Dodgers",
+          "AWAY_EVENT_PARTICIPANT_ID": "6k2ONZrB",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/8rdwhzHG-Q3bYx51M.png"
+          ],
+          "AN": "y",
+          "BOOKMAKERS_WITH_LIVE_IN_OFFER": [
+            "16"
+          ],
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        }
+      ]
+    },
+    {
+      "NAME": "Venezuela: LMBP",
+      "HEADER": "Venezuela: LMBP;182;j9lvWWvH",
+      "NAME_PART_1": "Venezuela",
+      "NAME_PART_2": "LMBP",
+      "TOURNAMENT_TEMPLATE_ID": "4WV12pNM",
+      "COUNTRY_ID": 205,
+      "COUNTRY_NAME": "Venezuela",
+      "TOURNAMENT_STAGE_ID": "j9lvWWvH",
+      "TOURNAMENT_TYPE": "p",
+      "TOURNAMENT_ID": "zse8tef4",
+      "SOURCE_TYPE": 0,
+      "HAS_LIVE_TABLE": 0,
+      "STANDING_INFO": 1,
+      "TEMPLATE_ID": "205_4WV12pNM",
+      "TOURNAMENT_STAGE_TYPE": 2,
+      "SHORT_NAME": "LMBP",
+      "URL": "/baseball/venezuela/lmbp/",
+      "TOURNAMENT_IMAGE": "https://www.flashscore.com/res/image/data/6Dt8BsC7-nB6ZY9Q3.png",
+      "SORT": "13Venezuela   009ezuela0010000000001000LMBP        004......000",
+      "STAGES_COUNT": 0,
+      "TSS": "",
+      "ZKL": "",
+      "ZKU": "",
+      "TOURNAMENT_SEASON_ID": "zse8tef4",
+      "CATEGORY_NAME": "Venezuela",
+      "EVENTS": [
+        {
+          "EVENT_ID": "O8bMXtPa",
+          "START_TIME": 1749592800,
+          "START_UTIME": 1749592800,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Caciques de Distrito",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749596121,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "CAC",
+          "HOME_PARTICIPANT_IDS": [
+            "tYCWjSdc"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Caciques de Distrito",
+          "HOME_PARTICIPANT_NAME_ONE": "Caciques de Distrito",
+          "HOME_EVENT_PARTICIPANT_ID": "OrUbD9qQ",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 2,
+          "HOME_ERRORS": 0,
+          "SERVICE": 1,
+          "HOME_SCORE_CURRENT": "1",
+          "HOME_SCORE_PART_1": "1",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dfRLULHG-McWnuNwT.png"
+          ],
+          "IMM": "tOiAuqWs",
+          "IMW": "100",
+          "IMP": "bNJF7UXg-4Q3QoxXO.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "SAM",
+          "AWAY_PARTICIPANT_IDS": [
+            "tOiAuqWs"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Samanes de Aragua",
+          "AWAY_PARTICIPANT_NAME_ONE": "Samanes de Aragua",
+          "AWAY_EVENT_PARTICIPANT_ID": "KEFU7m7m",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 3,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "1",
+          "AWAY_SCORE_FULL": 0,
+          "AWAY_SCORE_PART_1": "0",
+          "AWAY_SCORE_PART_2": "1",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/bNJF7UXg-4Q3QoxXO.png"
+          ],
+          "TV_LIVE_STREAMING": {
+            "HP": [
+              {
+                "HPI": 1,
+                "HPN": "YouTube",
+                "HPR": "1749592586|"
+              }
+            ]
+          },
+          "AN": "n",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "fV1oWTme",
+          "START_TIME": 1749592800,
+          "START_UTIME": 1749592800,
+          "STAGE_TYPE": "LIVE",
+          "MERGE_STAGE_TYPE": "LIVE",
+          "STAGE": "SECOND_INNING",
+          "SORT": "Lideres de Miranda",
+          "VISIBLE_RUN_RATE": 0,
+          "LIVE_MARK": "y",
+          "HAS_LINEPS": 0,
+          "STAGE_START_TIME": 1749595883,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "LID",
+          "HOME_PARTICIPANT_IDS": [
+            "vF5rpPNQ"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Lideres de Miranda",
+          "HOME_PARTICIPANT_NAME_ONE": "Lideres de Miranda",
+          "HOME_EVENT_PARTICIPANT_ID": "A1X4ntuA",
+          "HOME_GOAL_VAR": 0,
+          "HOME_HITS": 5,
+          "HOME_ERRORS": 1,
+          "SERVICE": 1,
+          "HOME_SCORE_CURRENT": "4",
+          "HOME_SCORE_PART_1": "4",
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/WfjmhzGG-4Q3QoxXO.png"
+          ],
+          "IMM": "b97yjnC3",
+          "IMW": "100",
+          "IMP": "Y3tHBRhl-r7Xrt3OM.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "DEL",
+          "AWAY_PARTICIPANT_IDS": [
+            "b97yjnC3"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Delfines de La Guaira",
+          "AWAY_PARTICIPANT_NAME_ONE": "Delfines de La Guaira",
+          "AWAY_EVENT_PARTICIPANT_ID": "IRzDpK9M",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_HITS": 6,
+          "AWAY_ERRORS": 0,
+          "AWAY_SCORE_CURRENT": "5",
+          "AWAY_SCORE_FULL": 5,
+          "AWAY_SCORE_PART_1": "3",
+          "AWAY_SCORE_PART_2": "2",
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/Y3tHBRhl-r7Xrt3OM.png"
+          ],
+          "AN": "n",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "St5DZ2fm",
+          "START_TIME": 1749596400,
+          "START_UTIME": 1749596400,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Centauros de La Guaira",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "CEN",
+          "HOME_PARTICIPANT_IDS": [
+            "2sESi8si"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Centauros de La Guaira",
+          "HOME_PARTICIPANT_NAME_ONE": "Centauros de La Guaira",
+          "HOME_EVENT_PARTICIPANT_ID": "ALw5iSM6",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/lSKSSIYA-W0P7gZh1.png"
+          ],
+          "IMM": "djGwo58K",
+          "IMW": "100",
+          "IMP": "dStJkSyS-4Q3QoxXO.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "MAR",
+          "AWAY_PARTICIPANT_IDS": [
+            "djGwo58K"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Marineros de Carabobo",
+          "AWAY_PARTICIPANT_NAME_ONE": "Marineros de Carabobo",
+          "AWAY_EVENT_PARTICIPANT_ID": "dxxDk6iJ",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/dStJkSyS-4Q3QoxXO.png"
+          ],
+          "AN": "n",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        },
+        {
+          "EVENT_ID": "2e5gU7I7",
+          "START_TIME": 1749596400,
+          "START_UTIME": 1749596400,
+          "STAGE_TYPE": "SCHEDULED",
+          "MERGE_STAGE_TYPE": "SCHEDULED",
+          "STAGE": "SCHEDULED",
+          "SORT": "Guerreros de Lara",
+          "VISIBLE_RUN_RATE": 0,
+          "HAS_LINEPS": 0,
+          "GAME_TIME": "-1",
+          "PLAYING_ON_SETS": null,
+          "RECENT_OVERS": null,
+          "SHORTNAME_HOME": "GUE",
+          "HOME_PARTICIPANT_IDS": [
+            "lzGqPNo1"
+          ],
+          "HOME_PARTICIPANT_TYPES": [
+            1
+          ],
+          "HOME_NAME": "Guerreros de Lara",
+          "HOME_PARTICIPANT_NAME_ONE": "Guerreros de Lara",
+          "HOME_EVENT_PARTICIPANT_ID": "lARrubXq",
+          "HOME_GOAL_VAR": 0,
+          "HOME_IMAGES": [
+            "https://www.flashscore.com/res/image/data/K0GvBV9r-hjpUlPFC.png"
+          ],
+          "IMM": "6BAlOs17",
+          "IMW": "100",
+          "IMP": "hKsoHweM-QZ4MnIHI.png",
+          "IME": "",
+          "SHORTNAME_AWAY": "SEN",
+          "AWAY_PARTICIPANT_IDS": [
+            "6BAlOs17"
+          ],
+          "AWAY_PARTICIPANT_TYPES": [
+            1
+          ],
+          "AWAY_NAME": "Senadores de Caracas",
+          "AWAY_PARTICIPANT_NAME_ONE": "Senadores de Caracas",
+          "AWAY_EVENT_PARTICIPANT_ID": "MNPjwx2d",
+          "AWAY_GOAL_VAR": 0,
+          "AWAY_IMAGES": [
+            "https://www.flashscore.com/res/image/data/hKsoHweM-QZ4MnIHI.png"
+          ],
+          "AN": "n",
+          "LIVE_IN_OFFER_BOOKMAKER_ID": 625,
+          "LIVE_IN_OFFER_STATUS": 0,
+          "STATS_DATA": {}
+        }
+      ]
+    }
+  ],
+  "META": {
+    "BOOKMAKERS": [
+      {
+        "BOOKMAKER_ID": 16,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "bet365"
+      },
+      {
+        "BOOKMAKER_ID": 707,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "BetMGM"
+      },
+      {
+        "BOOKMAKER_ID": 21,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Betfred"
+      },
+      {
+        "BOOKMAKER_ID": 26,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Betway"
+      },
+      {
+        "BOOKMAKER_ID": 28,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Ladbrokes"
+      },
+      {
+        "BOOKMAKER_ID": 841,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Midnite"
+      },
+      {
+        "BOOKMAKER_ID": 895,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "7Bet"
+      },
+      {
+        "BOOKMAKER_ID": 417,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "1xBet"
+      },
+      {
+        "BOOKMAKER_ID": 533,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Betway South Africa"
+      },
+      {
+        "BOOKMAKER_ID": 646,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Mozzartbetke"
+      },
+      {
+        "BOOKMAKER_ID": 925,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Paripesa"
+      },
+      {
+        "BOOKMAKER_ID": 503,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Nairabet"
+      },
+      {
+        "BOOKMAKER_ID": 893,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "PremierBetSBA"
+      },
+      {
+        "BOOKMAKER_ID": 781,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Easybet"
+      },
+      {
+        "BOOKMAKER_ID": 38,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Sportingbet"
+      },
+      {
+        "BOOKMAKER_ID": 919,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "PremierBetMW"
+      },
+      {
+        "BOOKMAKER_ID": 645,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "bet-at-home.de"
+      },
+      {
+        "BOOKMAKER_ID": 1005,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "1xBet.ir"
+      },
+      {
+        "BOOKMAKER_ID": 889,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "PremierBetZW"
+      },
+      {
+        "BOOKMAKER_ID": 647,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Mozzartbetrs"
+      },
+      {
+        "BOOKMAKER_ID": 1007,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "SoccerBet"
+      },
+      {
+        "BOOKMAKER_ID": 625,
+        "BOOKMAKER_BETTING_TYPE": 3,
+        "BOOKMAKER_NAME": "Unibetuk"
+      }
+    ],
+    "DATACORE_TRANSLATES": {}
+  },
+  "LAST_CHANGE_KEY": "b2b62631cdb15fdc8872732b6f82d71c"
+}
