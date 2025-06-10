@@ -1,0 +1,104 @@
+{
+  "MLB": {
+    "status_code": 422,
+    "body": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "locale"
+          ],
+          "msg": "Field required",
+          "input": null
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "timezone"
+          ],
+          "msg": "Field required",
+          "input": null
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "indent_days"
+          ],
+          "msg": "Field required",
+          "input": null
+        }
+      ]
+    }
+  },
+  "BBALL": {
+    "status_code": 422,
+    "body": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "locale"
+          ],
+          "msg": "Field required",
+          "input": null
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "timezone"
+          ],
+          "msg": "Field required",
+          "input": null
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "indent_days"
+          ],
+          "msg": "Field required",
+          "input": null
+        }
+      ]
+    }
+  },
+  "NHL": {
+    "status_code": 422,
+    "body": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "locale"
+          ],
+          "msg": "Field required",
+          "input": null
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "timezone"
+          ],
+          "msg": "Field required",
+          "input": null
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "indent_days"
+          ],
+          "msg": "Field required",
+          "input": null
+        }
+      ]
+    }
+  }
+}
