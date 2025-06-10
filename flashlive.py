@@ -19,21 +19,28 @@ HEADERS = {
 
 def get_flashlive_games():
     today = datetime.datetime.utcnow().date()
-    formatted_date = today.strftime("%Y-%m-%d")
+    # days=0 means “today”
     all_games = []
 
     for league_name, league_id in LEAGUES.items():
-        url = f"{BASE_URL}/events/list?category_id={league_id}&timezone=America/New_York"
-        response = requests.get(url, headers=HEADERS)
-        data = response.json()
+        url = (
+            f"{BASE_URL}/events/list"
+            f"?category_id={league_id}"
+            f"&days=0"
+        )
+        resp = requests.get(url, headers=HEADERS)
+        payload = resp.json()
 
-        for item in data.get("DATA", []):
-            start_time = item.get("START_TIME")
-            home = item.get("HOME", {}).get("NAME")
-            away = item.get("AWAY", {}).get("NAME")
+        # Try both uppercase DATA or lowercase data
+        items = payload.get("DATA") or payload.get("data") or []
+        for item in items:
+            # adapt to whichever field names you get back
+            start_time = item.get("START_TIME") or item.get("start_time")
+            home = item.get("HOME", {}).get("NAME") or item.get("home", {}).get("name")
+            away = item.get("AWAY", {}).get("NAME") or item.get("away", {}).get("name")
             score_home = item.get("HOME", {}).get("SCORE", {}).get("CURRENT", "")
             score_away = item.get("AWAY", {}).get("SCORE", {}).get("CURRENT", "")
-            status = item.get("STATE")
+            status = item.get("STATE") or item.get("state")
 
             all_games.append({
                 "league": league_name,
@@ -43,7 +50,7 @@ def get_flashlive_games():
                 "score_home": score_home,
                 "score_away": score_away,
                 "status": status,
-                "channel": None  # Placeholder to be filled later
+                "channel": None
             })
 
     return all_games
