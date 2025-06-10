@@ -1,14 +1,13 @@
 import os
 import requests
+import json
 
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")
 BASE_URL     = "https://flashlive-sports.p.rapidapi.com/v1/events/list"
 
-# Use sport-type IDs from /sports/list
+# Only MLB for now (to reduce noise)
 SPORT_IDS = {
-    "MLB":   6,  # Baseball
-    "BBALL": 3,  # Basketball (NBA + WNBA)
-    "NHL":   4   # Hockey
+    "MLB": 6  # Baseball
 }
 
 HEADERS = {
@@ -17,39 +16,33 @@ HEADERS = {
 }
 
 def get_flashlive_games():
-    all_games = []
+    """
+    Debug version: fetches the raw MLB payload and writes it to data/flash_mlb_payload.json
+    for inspection of the exact field names returned by the API.
+    """
+    # Ensure output directory exists
+    os.makedirs("data", exist_ok=True)
 
     for league_key, sport_id in SPORT_IDS.items():
         params = {
-            "sport_id":   sport_id,
-            "locale":     "en_GB",  # valid locale
-            "timezone":   0,        # UTC+0
-            "indent_days":0         # today
+            "sport_id":    sport_id,
+            "locale":      "en_GB",   # valid locale
+            "timezone":    0,         # UTC+0
+            "indent_days": 0          # today
         }
-        resp    = requests.get(BASE_URL, headers=HEADERS, params=params)
-        payload = resp.json()
-        items   = payload.get("DATA") or payload.get("data") or []
+        resp = requests.get(BASE_URL, headers=HEADERS, params=params)
+        try:
+            payload = resp.json()
+        except ValueError:
+            payload = {"error": "Invalid JSON", "raw_text": resp.text}
 
-        for ev in items:
-            # Determine our league label
-            if sport_id == 6:
-                league = "MLB"
-            elif sport_id == 4:
-                league = "NHL"
-            else:
-                # basketball: NBA vs WNBA by tournament name
-                tour = (ev.get("TOURNAMENT") or {}).get("NAME","")
-                league = "WNBA" if "Women" in tour else "NBA"
+        # Write full payload for debugging
+        debug_path = os.path.join("data", "flash_mlb_payload.json")
+        with open(debug_path, "w") as f:
+            json.dump(payload, f, indent=2)
 
-            all_games.append({
-                "league":     league,
-                "home":       (ev.get("HOME") or {}).get("NAME") or (ev.get("home") or {}).get("name"),
-                "away":       (ev.get("AWAY") or {}).get("NAME") or (ev.get("away") or {}).get("name"),
-                "start_time": ev.get("START_TIME") or ev.get("start_time"),
-                "score_home": (ev.get("HOME") or {}).get("SCORE", {}).get("CURRENT", ""),
-                "score_away": (ev.get("AWAY") or {}).get("SCORE", {}).get("CURRENT", ""),
-                "status":     ev.get("STATE") or ev.get("state"),
-                "channel":    None
-            })
+        # We only need one debug file, so break after MLB
+        break
 
-    return all_games
+    # Return empty list to avoid further parsing errors
+    return []
