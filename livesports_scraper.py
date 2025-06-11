@@ -1,51 +1,53 @@
+# livesports_scraper.py
+
 import os
-import re
 import json
 import requests
-from datetime import datetime
-
-URL = "https://www.livesportsontv.com/"
+from datetime import datetime, timezone
+from backend.constants import SPORTS, LIVESPORTSONTV_API
 
 def scrape_livesportsontv():
-    # 1) Download the page
-    resp = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
-    html = resp.text
-
-    # 2) Extract the JSON DATA array from the embedded "schemaFixtures" block
-    m = re.search(r'"DATA"\s*:\s*(\[\s*\{.*?\}\s*\])\s*,\s*"META"', html, re.DOTALL)
-    if not m:
-        raise RuntimeError("Could not locate the main DATA array in the page")
-
-    tournaments = json.loads(m.group(1))
-
+    """
+    Uses your existing LIVESPORTSONTV_API endpoint and SPORTS list to fetch
+    JSON for every sport slug, then extracts each fixture's broadcast channels.
+    """
     listings = []
-    # 3) Find the USA MLB tournament
-    for tour in tournaments:
-        if tour.get("SHORT_NAME") == "MLB" and tour.get("COUNTRY_NAME") == "USA":
-            for ev in tour.get("EVENTS", []):
-                # parse the UTC timestamp
-                ts = ev.get("START_UTIME") or ev.get("START_TIME")
-                start = datetime.utcfromtimestamp(ts).isoformat() if ts else None
 
-                # collect **all** broadcast channel names exactly as given
-                chans = [c.get("name") for c in ev.get("channels", []) if c.get("name")]
+    for sport in SPORTS:
+        slug = sport.get("slug")
+        if not slug:
+            continue
+        api_url = LIVESPORTSONTV_API.format(sport_slug=slug)
+        resp = requests.get(api_url, headers={"User-Agent":"Mozilla/5.0"})
+        resp.raise_for_status()
+        data = resp.json()  # list of fixture dicts
 
-                listings.append({
-                    "league":            "MLB",
-                    "home":              ev.get("HOME_NAME"),
-                    "away":              ev.get("AWAY_NAME"),
-                    "start_time":        start,
-                    "channels_broadcast":chans
-                })
-            break
+        for ev in data:
+            # parse UTC datetime from the 'date' field
+            raw = ev.get("date")
+            if not raw:
+                continue
+            dt = datetime.fromisoformat(raw.replace("Z","+00:00"))
+            start = dt.astimezone(timezone.utc).isoformat()
 
-    # 4) Write to raw_tv.json
+            # collect all broadcast channel entries
+            chans = [c.get("name") for c in ev.get("channels", []) if c.get("name")]
+
+            listings.append({
+                "league":            ev.get("league"),
+                "home":              ev.get("home_team"),
+                "away":              ev.get("visiting_team"),
+                "start_time":        start,
+                "channels_broadcast":chans
+            })
+
+    # write out
     os.makedirs("data", exist_ok=True)
-    with open("data/raw_tv.json", "w") as f:
+    with open("data/raw_tv.json","w") as f:
         json.dump(listings, f, indent=2)
 
     return listings
 
 if __name__ == "__main__":
     out = scrape_livesportsontv()
-    print(f"Extracted {len(out)} MLB broadcast listings")
+    print(f"Wrote {len(out)} TV listings to data/raw_tv.json")
