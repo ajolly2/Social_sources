@@ -1,76 +1,49 @@
-# livesports_scraper.py
-
-import os
-import json
-import requests
+import os, json, requests
 from datetime import datetime
-from bs4 import BeautifulSoup
 
 BASE = "https://www.livesportsontv.com"
 
-def extract_channels(ev):
-    out = []
-    for li in ev.select("ul.event__tags li"):
-        txt = li.get_text(strip=True)
-        if txt and txt.upper() != "MORE":
-            out.append(txt)
-    return out
-
-def scrape_league(league_slug):
-    """
-    Scrape /league/{league_slug} page.
-    """
+def scrape_league_via_next(league_slug):
     url = f"{BASE}/league/{league_slug}"
     r = requests.get(url, headers={"User-Agent":"Mozilla/5.0"})
     r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
+    text = r.text
 
-    # find the schedule block
-    schedule = soup.select_one("div.date-events")
-    if not schedule:
-        raise RuntimeError(f"{league_slug.upper()} schedule block not found")
+    # extract the Next.js data blob
+    start = text.find('<script id="__NEXT_DATA__"')
+    if start < 0:
+        raise RuntimeError("No __NEXT_DATA__ script found")
+    start = text.find(">", start) + 1
+    end   = text.find("</script>", start)
+    blob  = text[start:end]
+    data  = json.loads(blob)
 
-    listings = []
-    for block in schedule.select("div.events > div[style]"):
-        date_box = block.select_one("div.event__info--date")
-        if not date_box:
-            continue
-        # parse date
-        day = date_box.find("b").get_text()
-        mon = date_box.find("span").get_text()
-        date_str = f"{day} {mon} {datetime.utcnow().year}"
-        for ev in block.select("div.event"):
-            time_tag = ev.select_one("div.event__info--time time")
-            teams = ev.select(".event__participant")
-            channels = extract_channels(ev)
+    events = data["props"]["pageProps"]["events"]
+    out = []
+    for ev in events:
+        # each ev has: id, date (YYYY-MM-DD), time, home, away, channels[]
+        dt_str = f"{ev['date']} {ev['time']}"
+        try:
+            dt = datetime.strptime(dt_str, "%Y-%m-%d %I:%M %p")
+            iso = dt.isoformat()
+        except:
+            iso = None
 
-            # build ISO datetime
-            if time_tag:
-                t = time_tag.get_text(strip=True)
-                dt = datetime.strptime(f"{date_str} {t}", "%d %b %Y %I:%M %p")
-                start = dt.isoformat()
-            else:
-                start = None
+        out.append({
+            "league":   league_slug.upper(),
+            "start":    iso,
+            "home":     ev["home"],
+            "away":     ev["away"],
+            "channels": [c["name"] for c in ev["channels"]],
+        })
 
-            home = ev.select_one(".event__participant--home")
-            away = ev.select_one(".event__participant--away")
-            listings.append({
-                "league":   league_slug.upper(),
-                "date":     date_str,
-                "time":     t if time_tag else None,
-                "start":    start,
-                "home":     home.get_text(strip=True).rstrip(" @") if home else None,
-                "away":     away.get_text(strip=True) if away else None,
-                "channels": channels
-            })
-
-    # write out
+    # write file
     os.makedirs("data", exist_ok=True)
-    with open(f"data/raw_{league_slug}.json", "w") as f:
-        json.dump(listings, f, indent=2)
+    with open(f"data/{league_slug}.json","w") as f:
+        json.dump(out, f, indent=2)
 
-    return listings
+    return out
 
 if __name__ == "__main__":
-    wnba = scrape_league("wnba")
+    wnba = scrape_league_via_next("wnba")
     print(f"Wrote {len(wnba)} WNBA games")
