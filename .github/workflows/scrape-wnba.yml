@@ -27,8 +27,9 @@ jobs:
 
       - name: Run WNBA scraper
         run: |
+          mkdir -p artifacts
           python livesports_scraper.py ${{ github.event.inputs.league }} \
-            --output artifacts/${{ github.event.inputs.league }}_schedule.json
+            > artifacts/${{ github.event.inputs.league }}_schedule.json
 
       - name: Upload JSON artifact
         uses: actions/upload-artifact@v4
