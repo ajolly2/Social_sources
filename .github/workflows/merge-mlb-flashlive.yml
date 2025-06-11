@@ -4,44 +4,64 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: 'Optional: YYYY-MM-DD (UTC). Leave blank for today.'
+        description: 'Date to fetch (YYYY-MM-DD). Defaults to today if omitted.'
         required: false
-        default: ''
 
 jobs:
   merge:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Check out your repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Figure out which date to use
       - name: Pick DATE
-        id: pick
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
             echo "DATE=${{ github.event.inputs.date }}" >> $GITHUB_ENV
           else
-            echo "DATE=$(date --utc +%F)" >> $GITHUB_ENV
+            echo "DATE=$(date +%F)" >> $GITHUB_ENV
           fi
+      - name: Show DATE
+        run: echo "→ DATE = $DATE"
 
+      # 3. Prepare Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      # 4. Install your requirements
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r requirements.txt
 
+      # 5. Run your merge script
       - name: Run merge script
-        run: python merge_mlb_flashlive.py --date "$DATE"
+        run: |
+          python merge_mlb_flashlive.py --date "$DATE"
 
+      # 6. DEBUG: verify file creation & preview
+      - name: Debug: List files & preview merged JSON
+        run: |
+          echo "=== Runner file tree (top 2 levels) ==="
+          find . -maxdepth 2 -type f
+          echo
+          echo "=== mlb_flashlive_merged.json head (first 20 lines) ==="
+          if [ -f mlb_flashlive_merged.json ]; then
+            head -n 20 mlb_flashlive_merged.json
+          else
+            echo ">>> FILE NOT FOUND at $(pwd)/mlb_flashlive_merged.json <<<"
+          fi
+
+      # 7. Commit & push back to main
       - name: Commit & push results
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mlb_flashlive_merged.json
-          git diff --quiet && exit 0
-          git commit -m "Merge MLB+FlashLive schedule for $DATE"
+          git commit -m "Merge MLB+FlashLive schedule for $DATE" || echo "Nothing to commit"
           git push
