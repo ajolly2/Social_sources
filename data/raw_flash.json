@@ -75,8 +75,8 @@
     "away": "San Francisco Giants",
     "start_time": "2025-06-11T00:40:00",
     "score_home": "5",
-    "score_away": "3",
-    "status": "LIVE",
+    "score_away": "6",
+    "status": "FINISHED",
     "channel": null
   },
   {
@@ -84,9 +84,9 @@
     "home": "Los Angeles Angels",
     "away": "Athletics",
     "start_time": "2025-06-11T01:38:00",
-    "score_home": "0",
+    "score_home": "2",
     "score_away": "1",
-    "status": "LIVE",
+    "status": "FINISHED",
     "channel": null
   },
   {
@@ -94,8 +94,8 @@
     "home": "Arizona Diamondbacks",
     "away": "Seattle Mariners",
     "start_time": "2025-06-11T01:40:00",
-    "score_home": "4",
-    "score_away": "2",
+    "score_home": "10",
+    "score_away": "3",
     "status": "LIVE",
     "channel": null
   },
@@ -104,9 +104,9 @@
     "home": "San Diego Padres",
     "away": "Los Angeles Dodgers",
     "start_time": "2025-06-11T01:40:00",
-    "score_home": "5",
-    "score_away": "0",
-    "status": "LIVE",
+    "score_home": "11",
+    "score_away": "1",
+    "status": "FINISHED",
     "channel": null
   },
   {
