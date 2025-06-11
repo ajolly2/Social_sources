@@ -7,42 +7,42 @@ from datetime import datetime
 URL = "https://www.livesportsontv.com/"
 
 def scrape_livesportsontv():
-    # 1. Get raw HTML
+    # 1. Fetch the page
     resp = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
     html = resp.text
 
-    # 2. Find the fixtures JSON blob
-    #    It starts with [{"fixture_id": and ends with }]
-    m = re.search(r'(\[\s*{\s*"fixture_id".*?\}\s*\])', html, re.DOTALL)
+    # 2. Extract the JSON under "schemaFixtures"
+    m = re.search(r'"schemaFixtures"\s*:\s*(\{.*?\})\s*,\s*"schemaTables"', html, re.DOTALL)
     if not m:
-        raise RuntimeError("Could not locate fixtures JSON in page")
+        raise RuntimeError("Could not locate schemaFixtures JSON")
+    schema = json.loads(m.group(1))
 
-    fixtures = json.loads(m.group(1))
+    # 3. Grab the oldFixtures array
+    fixtures = schema.get("oldFixtures", [])
 
     tv_listings = []
     for ev in fixtures:
-        # Only MLB for now
         if ev.get("league") != "MLB":
             continue
 
-        # parse ISO date to match FlashLive's format
-        # ev["date"] is like "2025-06-11T23:10:00.000Z"
+        # parse the UTC ISO date
         dt = datetime.fromisoformat(ev["date"].replace("Z", ""))
         start_time = dt.isoformat()
 
-        # build listing
+        # extract the first channel shortname
+        channels = ev.get("channels", [])
+        chan = channels[0]["shortname"] if channels else None
+
         tv_listings.append({
             "league":     ev["league"],
             "home":       ev["home_team"],
             "away":       ev["visiting_team"],
             "start_time": start_time,
-            # take the first channel shortname if available
-            "channel":    ev.get("channels", [{}])[0].get("shortname")
+            "channel":    chan
         })
 
-    # ensure data dir
+    # write result
     os.makedirs("data", exist_ok=True)
-    # write out raw_tv.json
     with open("data/raw_tv.json", "w") as f:
         json.dump(tv_listings, f, indent=2)
 
@@ -50,4 +50,4 @@ def scrape_livesportsontv():
 
 if __name__ == "__main__":
     listings = scrape_livesportsontv()
-    print(f"Extracted {len(listings)} TV listings")    
+    print(f"Extracted {len(listings)} TV listings")
