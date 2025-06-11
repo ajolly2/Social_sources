@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: 'Date to scrape (YYYY-MM-DD). Leave blank for today.'
+        description: 'Date to scrape (YYYY-MM-DD). Leave blank to default to today (UTC).'
         required: false
         default: ''
 
@@ -19,7 +19,7 @@ jobs:
       - name: Determine DATE
         id: pick-date
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
+          if [[ -n "${{ github.event.inputs.date }}" ]]; then
             echo "Using manual input date: ${{ github.event.inputs.date }}"
             echo "DATE=${{ github.event.inputs.date }}" >> $GITHUB_ENV
           else
@@ -34,13 +34,19 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run merge script
+        # Only include --date flag if DATE is non-empty
         run: |
-          python merge_mlb_flashlive.py --date "$DATE"
+          echo "Final DATE → '$DATE'"
+          if [[ -n "$DATE" ]]; then
+            python merge_mlb_flashlive.py --date "$DATE"
+          else
+            python merge_mlb_flashlive.py
+          fi
 
       - name: Commit & push results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mlb_flashlive_merged.json
-          git diff --quiet || git commit -m "Merge MLB+FlashLive schedule for $DATE"
+          git diff --quiet || git commit -m "Merge MLB+FlashLive schedule for ${DATE:-$(date +'%Y-%m-%d')}"
           git push
