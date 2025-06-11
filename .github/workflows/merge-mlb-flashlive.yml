@@ -1,42 +1,46 @@
+# .github/workflows/merge-mlb-flashlive.yml
 name: Merge MLB & FlashLive Schedule
 
 on:
   workflow_dispatch:
     inputs:
       date:
-        description: 'Date to scrape (YYYY-MM-DD)'
-        required: true
-        default: ${{ github.event.inputs.date || github.run_date }}
-  schedule:
-    - cron: '0 4 * * *'  # daily at 04:00 UTC
+        description: 'Date to scrape (YYYY-MM-DD). Leave blank for today.'
+        required: false
+        default: ''
 
 jobs:
   merge:
     runs-on: ubuntu-latest
-    env:
-      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+      - name: Determine DATE
+        id: pick-date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "Using manual input date: ${{ github.event.inputs.date }}"
+            echo "DATE=${{ github.event.inputs.date }}" >> $GITHUB_ENV
+          else
+            TODAY=$(date --utc +'%Y-%m-%d')
+            echo "No date input; defaulting to today: $TODAY"
+            echo "DATE=$TODAY" >> $GITHUB_ENV
+          fi
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          pip install -r requirements.txt
 
-      - name: Merge MLB & FlashLive
+      - name: Run merge script
         run: |
-          python flashlive.py > artifacts/flashlive_${{ github.event.inputs.date }}.json
-          python merge_mlb_flashlive.py --flashlive artifacts/flashlive_${{ github.event.inputs.date }}.json \
-                                        --output artifacts/merged_${{ github.event.inputs.date }}.json
+          python merge_mlb_flashlive.py --date "$DATE"
 
-      - name: Upload merged schedule artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: merged-schedule-${{ github.event.inputs.date }}
-          path: artifacts/merged_${{ github.event.inputs.date }}.json
+      - name: Commit & push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mlb_flashlive_merged.json
+          git diff --quiet || git commit -m "Merge MLB+FlashLive schedule for $DATE"
+          git push
