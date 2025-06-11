@@ -10,34 +10,35 @@ def scrape_livesportsontv():
     resp = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
     html = resp.text
 
-    # Capture the object between "schemaFixtures": and ,"schemaTables"
-    m = re.search(
-        r'"schemaFixtures"\s*:\s*(\{.*?\})\s*,\s*"schemaTables"',
-        html,
-        re.DOTALL
+    # Look for schemaFixtures (case-insensitive), quoted with ' or "
+    pattern = re.compile(
+        r"""['"]schemaFixtures['"]\s*:\s*(\{.*?\})\s*,\s*['"]schemaTables['"]""",
+        re.DOTALL | re.IGNORECASE
     )
+    m = pattern.search(html)
     if not m:
         raise RuntimeError("Could not extract schemaFixtures JSON")
 
     schema_obj = json.loads(m.group(1))
-    tournaments = schema_obj.get("DATA", [])
+    tournaments = schema_obj.get("DATA") or schema_obj.get("data") or []
 
     tv_listings = []
     for tour in tournaments:
         if tour.get("SHORT_NAME") != "MLB" or tour.get("COUNTRY_NAME") != "USA":
             continue
+
         for ev in tour.get("EVENTS", []):
             ts = ev.get("START_UTIME") or ev.get("START_TIME")
             start_time = datetime.utcfromtimestamp(ts).isoformat() if ts else None
 
-            channels = [c.get("shortname") for c in ev.get("channels", []) if c.get("shortname")]
+            chans = [c.get("shortname") for c in ev.get("channels", []) if c.get("shortname")]
 
             tv_listings.append({
                 "league":     "MLB",
                 "home":       ev.get("HOME_NAME"),
                 "away":       ev.get("AWAY_NAME"),
                 "start_time": start_time,
-                "channels":   channels
+                "channels":   chans
             })
         break
 
@@ -48,4 +49,5 @@ def scrape_livesportsontv():
     return tv_listings
 
 if __name__ == "__main__":
-    print(f"Extracted {len(scrape_livesportsontv())} listings")
+    listings = scrape_livesportsontv()
+    print(f"Extracted {len(listings)} MLB listings")
