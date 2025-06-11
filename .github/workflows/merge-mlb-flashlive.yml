@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: 'Date to fetch (YYYY-MM-DD). Defaults to today if omitted.'
+        description: 'Date to fetch (YYYY-MM-DD). Defaults to today (UTC) if omitted.'
         required: false
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
           if [ -n "${{ github.event.inputs.date }}" ]; then
             echo "DATE=${{ github.event.inputs.date }}" >> $GITHUB_ENV
           else
-            echo "DATE=$(date +%F)" >> $GITHUB_ENV
+            echo "DATE=$(date -u +%F)" >> $GITHUB_ENV
           fi
 
       - name: Show DATE
@@ -39,22 +39,18 @@ jobs:
       - name: Run merge script
         run: python merge_mlb_flashlive.py --date "$DATE"
 
-      - name: Debug: List files & preview merged JSON
+      - name: Debug: list files & preview output
         run: |
-          echo "=== Runner file tree (top 2 levels) ==="
+          echo "Filesystem snapshot:"
           find . -maxdepth 2 -type f
           echo
-          echo "=== mlb_flashlive_merged.json head (first 20 lines) ==="
-          if [ -f mlb_flashlive_merged.json ]; then
-            head -n 20 mlb_flashlive_merged.json
-          else
-            echo ">>> FILE NOT FOUND at $(pwd)/mlb_flashlive_merged.json <<<"
-          fi
+          echo "Preview merged JSON:"
+          head -n 20 mlb_flashlive_merged.json || echo "(file not found)"
 
       - name: Commit & push results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mlb_flashlive_merged.json
-          git commit -m "Merge MLB+FlashLive schedule for $DATE" || echo "Nothing to commit"
+          git commit -m "Merge MLB+FlashLive schedule for $DATE" || echo "No changes to commit"
           git push
