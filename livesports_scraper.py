@@ -6,68 +6,71 @@ import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-URL = "https://www.livesportsontv.com/"
+BASE = "https://www.livesportsontv.com"
 
-def extract_channels_from_event(ev_div):
-    channels = []
-    for li in ev_div.select("ul.event__tags li"):
+def extract_channels(ev):
+    out = []
+    for li in ev.select("ul.event__tags li"):
         txt = li.get_text(strip=True)
         if txt and txt.upper() != "MORE":
-            channels.append(txt)
-    return channels
+            out.append(txt)
+    return out
 
-def scrape_livesportsontv_mlb():
-    resp = requests.get(URL, headers={"User-Agent":"Mozilla/5.0"})
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+def scrape_league(league_slug):
+    """
+    Scrape /league/{league_slug} page.
+    """
+    url = f"{BASE}/league/{league_slug}"
+    r = requests.get(url, headers={"User-Agent":"Mozilla/5.0"})
+    r.raise_for_status()
+    soup = BeautifulSoup(r.text, "html.parser")
 
-    # 1) Find the MLB link
-    mlb_link = soup.find("a", href="/league/mlb")
-    if not mlb_link:
-        raise RuntimeError("MLB <a href=\"/league/mlb\"> not found")
-
-    # 2) From there, find the next sibling .events container
-    #    The link is wrapped in a div, so climb up one and then find next .events
-    league_div = mlb_link.find_parent("div", style=lambda v: v and "position" in v)
-    events_container = league_div.find_next_sibling("div", class_="events")
-    if not events_container:
-        raise RuntimeError("MLB events container not found")
+    # find the schedule block
+    schedule = soup.select_one("div.date-events")
+    if not schedule:
+        raise RuntimeError(f"{league_slug.upper()} schedule block not found")
 
     listings = []
-    for ev in events_container.find_all("div", class_="event"):
-        # Time
-        time_tag = ev.select_one("div.event__info--time time")
-        if time_tag:
-            t = time_tag.get_text(strip=True).lower()
-            today = datetime.utcnow().date()
-            dt = datetime.strptime(f"{today} {t}", "%Y-%m-%d %I:%M %p")
-            start_time = dt.isoformat()
-        else:
-            start_time = None
+    for block in schedule.select("div.events > div[style]"):
+        date_box = block.select_one("div.event__info--date")
+        if not date_box:
+            continue
+        # parse date
+        day = date_box.find("b").get_text()
+        mon = date_box.find("span").get_text()
+        date_str = f"{day} {mon} {datetime.utcnow().year}"
+        for ev in block.select("div.event"):
+            time_tag = ev.select_one("div.event__info--time time")
+            teams = ev.select(".event__participant")
+            channels = extract_channels(ev)
 
-        # Teams
-        home = ev.select_one(".event__participant--home")
-        away = ev.select_one(".event__participant--away")
-        home_team = home.get_text(strip=True).rstrip(" @") if home else None
-        away_team = away.get_text(strip=True) if away else None
+            # build ISO datetime
+            if time_tag:
+                t = time_tag.get_text(strip=True)
+                dt = datetime.strptime(f"{date_str} {t}", "%d %b %Y %I:%M %p")
+                start = dt.isoformat()
+            else:
+                start = None
 
-        # Channels
-        chan_list = extract_channels_from_event(ev)
+            home = ev.select_one(".event__participant--home")
+            away = ev.select_one(".event__participant--away")
+            listings.append({
+                "league":   league_slug.upper(),
+                "date":     date_str,
+                "time":     t if time_tag else None,
+                "start":    start,
+                "home":     home.get_text(strip=True).rstrip(" @") if home else None,
+                "away":     away.get_text(strip=True) if away else None,
+                "channels": channels
+            })
 
-        listings.append({
-            "league":             "MLB",
-            "home":               home_team,
-            "away":               away_team,
-            "start_time":         start_time,
-            "channels_broadcast": chan_list
-        })
-
+    # write out
     os.makedirs("data", exist_ok=True)
-    with open("data/raw_tv.json", "w") as f:
+    with open(f"data/raw_{league_slug}.json", "w") as f:
         json.dump(listings, f, indent=2)
 
     return listings
 
 if __name__ == "__main__":
-    out = scrape_livesportsontv_mlb()
-    print(f"Wrote {len(out)} MLB listings to data/raw_tv.json")
+    wnba = scrape_league("wnba")
+    print(f"Wrote {len(wnba)} WNBA games")
