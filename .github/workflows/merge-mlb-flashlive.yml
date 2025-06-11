@@ -1,0 +1,42 @@
+name: Merge MLB & FlashLive Schedule
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to scrape (YYYY-MM-DD)'
+        required: true
+        default: ${{ github.event.inputs.date || github.run_date }}
+  schedule:
+    - cron: '0 4 * * *'  # daily at 04:00 UTC
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    env:
+      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Merge MLB & FlashLive
+        run: |
+          python flashlive.py > artifacts/flashlive_${{ github.event.inputs.date }}.json
+          python merge_mlb_flashlive.py --flashlive artifacts/flashlive_${{ github.event.inputs.date }}.json \
+                                        --output artifacts/merged_${{ github.event.inputs.date }}.json
+
+      - name: Upload merged schedule artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-schedule-${{ github.event.inputs.date }}
+          path: artifacts/merged_${{ github.event.inputs.date }}.json
