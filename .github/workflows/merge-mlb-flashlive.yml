@@ -1,19 +1,20 @@
+# .github/workflows/merge-mlb-flashlive.yml
 name: Merge MLB & FlashLive Schedule
 
 on:
   workflow_dispatch:
     inputs:
       date:
-        description: 'Date to fetch (YYYY-MM-DD). Defaults to today (UTC) if omitted.'
+        description: 'YYYY-MM-DD to fetch (defaults to today)'
         required: false
 
 jobs:
   merge:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      # … rest of your steps …
+
 
       - name: Pick DATE
         run: |
