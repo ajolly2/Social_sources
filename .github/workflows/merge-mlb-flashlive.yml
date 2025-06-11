@@ -5,28 +5,63 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: 'YYYY-MM-DD to fetch (defaults to today)'
+        description: 'Date for schedule in YYYY-MM-DD (defaults to today)'
         required: false
 
 jobs:
   merge:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # … rest of your steps …
 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Debug: show workflow source
+        run: |
+          echo "==== Contents of this workflow ===="
+          sed -n '1,200p' .github/workflows/merge-mlb-flashlive.yml
+          echo "==================================="
 
       - name: Pick DATE
+        id: pick_date
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            echo "DATE=${{ github.event.inputs.date }}" >> $GITHUB_ENV
+          if [[ "${{ github.event.inputs.date }}" != "" ]]; then
+            echo "Using input date: ${{ github.event.inputs.date }}"
+            echo "::set-output name=date::${{ github.event.inputs.date }}"
           else
-            echo "DATE=$(date -u +%F)" >> $GITHUB_ENV
+            TODAY=$(date +'%Y-%m-%d')
+            echo "No input date provided, defaulting to $TODAY"
+            echo "::set-output name=date::$TODAY"
           fi
 
-      - name: Debug: list workflows directory
-        run: |
-          echo "Workflows in repo:"
-          ls -R .github/workflows
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      # ... rest of your steps here ...
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Debug: show workspace layout
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Files in repo:"
+          ls -R .
+
+      - name: Run merge script
+        run: |
+          python merge_mlb_flashlive.py --date "${{ steps.pick_date.outputs.date }}"
+          echo "---- After script run, listing JSON artifacts ----"
+          ls -lh *.json || echo "No JSON files found"
+
+      - name: Commit & push results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.json
+          git diff --staged --name-only
+          git commit -m "Add merged MLB+FlashLive schedule for ${{ steps.pick_date.outputs.date }}" || echo "No changes to commit"
+          git push
