@@ -21,14 +21,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: List sport IDs
-        env:
-          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
-        run: |
-          pip install requests
-          python get_sport_ids.py
+      - name: Scrape broadcast channels (LivesportsOnTV)
+        # runs your existing Django‐based scraper logic standalone
+        run: python livesports_scraper.py
 
-      - name: Run scraper
+      - name: Run FlashLive scraper + merge
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
         run: python run.py
@@ -37,17 +34,10 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add \
-            data/flash_debug.json \
-            data/flash_debug_full.json \
-            data/flash_mlb_payload.json \
-            data/tv_debug.html \
-            data/raw_flash.json \
-            data/raw_tv.json \
-            data/games.json
+          git add data/raw_tv.json data/games.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update scraped & debug data"
+            git commit -m "Update TV listings & games data"
             git push
           else
-            echo "No changes to commit"
+            echo "No data changes to commit"
           fi
