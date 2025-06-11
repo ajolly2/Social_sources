@@ -1,75 +1,48 @@
 # livesports_scraper.py
 
 import os
+import re
 import json
 import requests
-from datetime import datetime, timezone
+from datetime import datetime
 
-# ────────────────────────────────────────────
-# Inline your SPORTS list and API URL template
-#
-# Replace these with the exact values from your
-# backend/constants.py so this script can run
-# standalone without Django.
-# ────────────────────────────────────────────
-
-SPORTS = [
-    {"slug": "mlb",  "name": "Major League Baseball"},
-    {"slug": "nba",  "name": "National Basketball Association"},
-    {"slug": "wnba", "name": "Women’s National Basketball Association"},
-    {"slug": "nhl",  "name": "National Hockey League"},
-]
-
-# Example URL template from your constants — be sure it matches.
-# In Django you used:
-#   api_url = LIVESPORTSONTV_API.format(sport_slug=sport_slug)
-LIVESPORTSONTV_API = "https://api.livesportsontv.com/v1/schedules/{sport_slug}.json"
-
+URL = "https://www.livesportsontv.com/"
 
 def scrape_livesportsontv():
-    """
-    Fetches the LivesportsOnTV JSON for each sport in SPORTS,
-    extracts every fixture’s broadcast channels, and writes
-    them to data/raw_tv.json.
-    """
+    resp = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
+    html = resp.text
+
+    # Extract the "DATA":[ ... ] array that's under schemaFixtures
+    m = re.search(r'"schemaFixtures"\s*:\s*\{.*?"DATA"\s*:\s*(\[\s*\{.*?\}\s*\])', html, re.DOTALL)
+    if not m:
+        raise RuntimeError("Could not locate schemaFixtures.DATA in page")
+
+    tournaments = json.loads(m.group(1))
+
     listings = []
+    # Find the USA MLB tournament
+    for tour in tournaments:
+        if tour.get("SHORT_NAME") == "MLB" and tour.get("COUNTRY_NAME") == "USA":
+            for ev in tour.get("EVENTS", []):
+                # parse UTC timestamp
+                ts = ev.get("START_UTIME") or ev.get("START_TIME")
+                start = datetime.utcfromtimestamp(ts).isoformat() if ts else None
 
-    for sport in SPORTS:
-        slug = sport.get("slug")
-        if not slug:
-            continue
+                chans = [c.get("name") for c in ev.get("channels", []) if c.get("name")]
+                listings.append({
+                    "league":            "MLB",
+                    "home":              ev.get("HOME_NAME"),
+                    "away":              ev.get("AWAY_NAME"),
+                    "start_time":        start,
+                    "channels_broadcast":chans
+                })
+            break
 
-        api_url = LIVESPORTSONTV_API.format(sport_slug=slug)
-        resp = requests.get(api_url, headers={"User-Agent": "Mozilla/5.0"})
-        resp.raise_for_status()
-
-        data = resp.json()  # expected to be a list of fixtures
-        for ev in data:
-            # Parse the ISO date (e.g. "2025-06-11T00:10:00.000Z")
-            raw_date = ev.get("date")
-            if not raw_date:
-                continue
-            dt = datetime.fromisoformat(raw_date.replace("Z", "+00:00"))
-            start = dt.astimezone(timezone.utc).isoformat()
-
-            # Collect every channel name
-            chans = [c.get("name") for c in ev.get("channels", []) if c.get("name")]
-
-            listings.append({
-                "league":             ev.get("league"),
-                "home":               ev.get("home_team"),
-                "away":               ev.get("visiting_team"),
-                "start_time":         start,
-                "channels_broadcast": chans
-            })
-
-    # Write out to data/raw_tv.json
     os.makedirs("data", exist_ok=True)
     with open("data/raw_tv.json", "w") as f:
         json.dump(listings, f, indent=2)
 
     return listings
-
 
 if __name__ == "__main__":
     out = scrape_livesportsontv()
