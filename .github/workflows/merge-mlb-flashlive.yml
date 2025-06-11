@@ -1,4 +1,3 @@
-# .github/workflows/merge-mlb-flashlive.yml
 name: Merge MLB & FlashLive Schedule
 
 on:
@@ -25,13 +24,13 @@ jobs:
       - name: Pick DATE
         id: pick_date
         run: |
-          if [[ "${{ github.event.inputs.date }}" != "" ]]; then
+          if [[ -n "${{ github.event.inputs.date }}" ]]; then
             echo "Using input date: ${{ github.event.inputs.date }}"
-            echo "::set-output name=date::${{ github.event.inputs.date }}"
+            echo "date=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
           else
             TODAY=$(date +'%Y-%m-%d')
-            echo "No input date provided, defaulting to $TODAY"
-            echo "::set-output name=date::$TODAY"
+            echo "No input provided; defaulting to $TODAY"
+            echo "date=$TODAY" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Set up Python
@@ -46,15 +45,15 @@ jobs:
 
       - name: Debug: show workspace layout
         run: |
-          echo "PWD: $(pwd)"
-          echo "Files in repo:"
+          echo "Working dir: $(pwd)"
           ls -R .
 
       - name: Run merge script
         run: |
+          echo "Running merge_mlb_flashlive.py for date ${{ steps.pick_date.outputs.date }}"
           python merge_mlb_flashlive.py --date "${{ steps.pick_date.outputs.date }}"
-          echo "---- After script run, listing JSON artifacts ----"
-          ls -lh *.json || echo "No JSON files found"
+          echo "---- After script ----"
+          ls -lh *.json || echo "❌ No JSON files generated"
 
       - name: Commit & push results
         if: always()
@@ -62,6 +61,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add *.json
-          git diff --staged --name-only
-          git commit -m "Add merged MLB+FlashLive schedule for ${{ steps.pick_date.outputs.date }}" || echo "No changes to commit"
+          echo "Staged files:"
+          git diff --cached --name-only || true
+          git commit -m "Add merged schedule for ${{ steps.pick_date.outputs.date }}" || echo "No changes to commit"
           git push
