@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "league": "MLB",
+    "home": "Houston Astros",
+    "away": "Chicago White Sox",
+    "start_time": "2025-06-11T00:10:00",
+    "channel": "Fubo Sports US"
+  },
+  {
+    "league": "MLB",
+    "home": "Colorado Rockies",
+    "away": "San Francisco Giants",
+    "start_time": "2025-06-11T00:40:00",
+    "channel": "Fubo Sports US"
+  },
+  {
+    "league": "MLB",
+    "home": "Los Angeles Angels",
+    "away": "Athletics",
+    "start_time": "2025-06-11T01:38:00",
+    "channel": "Fubo Sports US"
+  },
+  {
+    "league": "MLB",
+    "home": "San Diego Padres",
+    "away": "Los Angeles Dodgers",
+    "start_time": "2025-06-11T01:40:00",
+    "channel": "Fubo Sports US"
+  },
+  {
+    "league": "MLB",
+    "home": "Arizona Diamondbacks",
+    "away": "Seattle Mariners",
+    "start_time": "2025-06-11T01:40:00",
+    "channel": "Fubo Sports US"
+  }
+]
