@@ -12,11 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Check out your repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Figure out which date to use
       - name: Pick DATE
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
@@ -24,27 +22,23 @@ jobs:
           else
             echo "DATE=$(date +%F)" >> $GITHUB_ENV
           fi
+
       - name: Show DATE
         run: echo "→ DATE = $DATE"
 
-      # 3. Prepare Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # 4. Install your requirements
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 5. Run your merge script
       - name: Run merge script
-        run: |
-          python merge_mlb_flashlive.py --date "$DATE"
+        run: python merge_mlb_flashlive.py --date "$DATE"
 
-      # 6. DEBUG: verify file creation & preview
       - name: Debug: List files & preview merged JSON
         run: |
           echo "=== Runner file tree (top 2 levels) ==="
@@ -57,7 +51,6 @@ jobs:
             echo ">>> FILE NOT FOUND at $(pwd)/mlb_flashlive_merged.json <<<"
           fi
 
-      # 7. Commit & push back to main
       - name: Commit & push results
         run: |
           git config user.name "github-actions[bot]"
