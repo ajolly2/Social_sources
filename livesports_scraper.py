@@ -8,66 +8,65 @@ from bs4 import BeautifulSoup
 
 URL = "https://www.livesportsontv.com/"
 
-def scrape_livesportsontv():
-    resp = requests.get(URL, headers={"User-Agent":"Mozilla/5.0"})
+def extract_channels_from_event(ev_div):
+    """
+    Given a <div class="event">…</div>, return the list of channel names.
+    """
+    channels = []
+    for li in ev_div.select("ul.event__tags li"):
+        text = li.get_text(strip=True)
+        if not text or text.upper() == "MORE":
+            continue
+        channels.append(text)
+    return channels
+
+def scrape_livesportsontv_mlb():
+    resp = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    listings = []
-
-    # 1) Find the Baseball sport header
-    baseball_header = soup.find("h3", string="Baseball")
-    if not baseball_header:
-        raise RuntimeError("Baseball header not found")
-
-    # The MLB league section is the next <a href="/league/mlb"> ancestor
-    mlb_section = baseball_header.find_next("a", href="/league/mlb")
-    if not mlb_section:
+    # 1. Find the MLB league header
+    mlb_h4 = soup.find("h4", class_="date-events__league-header-title", string="MLB")
+    if not mlb_h4:
         raise RuntimeError("MLB league header not found")
+    league_header = mlb_h4.find_parent("div", class_="date-events__league-header")
 
-    # The events container follows that link
-    events_container = mlb_section.find_next_sibling("div", class_="events")
+    # 2. Find the corresponding events container
+    events_container = league_header.find_next_sibling("div", class_="events")
     if not events_container:
         raise RuntimeError("MLB events container not found")
 
-    # 2) Iterate each <div class="event ...">
-    for ev_div in events_container.find_all("div", class_="event"):
-        # Time
-        time_tag = ev_div.select_one("div.event__info--time time")
-        time_str = time_tag.get_text(strip=True) if time_tag else None
-
-        # Build an ISO timestamp using today’s date (adjust as needed)
-        if time_str:
+    listings = []
+    # 3. Iterate each game block
+    for ev in events_container.find_all("div", class_="event"):
+        # Time → ISO string
+        time_tag = ev.select_one("div.event__info--time time")
+        if time_tag:
+            t = time_tag.get_text(strip=True).lower()
             today = datetime.utcnow().date()
-            dt = datetime.strptime(f"{today} {time_str.lower()}", "%Y-%m-%d %I:%M %p")
+            dt = datetime.strptime(f"{today} {t}", "%Y-%m-%d %I:%M %p")
             start_time = dt.isoformat()
         else:
             start_time = None
 
         # Teams
-        home = ev_div.select_one(".event__participant--home")
-        away = ev_div.select_one(".event__participant--away")
-        # remove any trailing @
-        home_team = home.get_text(strip=True).rstrip(" @") if home else None
-        away_team = away.get_text(strip=True) if away else None
+        home_tag = ev.select_one(".event__participant--home")
+        away_tag = ev.select_one(".event__participant--away")
+        home = home_tag.get_text(strip=True).rstrip(" @") if home_tag else None
+        away = away_tag.get_text(strip=True) if away_tag else None
 
-        # Channels — both <li class="channel-link"> and <li> with channel-container
-        channel_texts = []
-        for li in ev_div.select("ul.event__tags li"):
-            text = li.get_text(strip=True)
-            # skip the "MORE" link
-            if text and text.upper() != "MORE":
-                channel_texts.append(text)
+        # Channels
+        chans = extract_channels_from_event(ev)
 
         listings.append({
             "league":             "MLB",
-            "home":               home_team,
-            "away":               away_team,
+            "home":               home,
+            "away":               away,
             "start_time":         start_time,
-            "channels_broadcast": channel_texts
+            "channels_broadcast": chans
         })
 
-    # Write out
+    # 4. Write out
     os.makedirs("data", exist_ok=True)
     with open("data/raw_tv.json", "w") as f:
         json.dump(listings, f, indent=2)
@@ -75,5 +74,5 @@ def scrape_livesportsontv():
     return listings
 
 if __name__ == "__main__":
-    out = scrape_livesportsontv()
-    print(f"Wrote {len(out)} listings to data/raw_tv.json")
+    out = scrape_livesportsontv_mlb()
+    print(f"Wrote {len(out)} MLB listings to data/raw_tv.json")
