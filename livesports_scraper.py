@@ -1,23 +1,39 @@
 import os
-import re
-import json
 import requests
+import json
 from datetime import datetime
 
 URL = "https://www.livesportsontv.com/"
 
 def scrape_livesportsontv():
-    # 1. Fetch the page
     resp = requests.get(URL, headers={"User-Agent": "Mozilla/5.0"})
     html = resp.text
 
-    # 2. Extract the JSON under "schemaFixtures"
-    m = re.search(r'"schemaFixtures"\s*:\s*(\{.*?\})\s*,\s*"schemaTables"', html, re.DOTALL)
-    if not m:
-        raise RuntimeError("Could not locate schemaFixtures JSON")
-    schema = json.loads(m.group(1))
+    # 1) Find the unquoted keyword
+    idx = html.find("schemaFixtures")
+    if idx < 0:
+        raise RuntimeError("Could not locate schemaFixtures in HTML")
 
-    # 3. Grab the oldFixtures array
+    # 2) Find the first brace after that point
+    start = html.find("{", idx)
+    if start < 0:
+        raise RuntimeError("Could not find opening brace for schemaFixtures")
+
+    # 3) Brace‐match to find the end
+    depth = 0
+    for i, ch in enumerate(html[start:], start):
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                end = i + 1
+                break
+    else:
+        raise RuntimeError("Unbalanced braces scanning schemaFixtures")
+
+    raw = html[start:end]
+    schema = json.loads(raw)
     fixtures = schema.get("oldFixtures", [])
 
     tv_listings = []
@@ -25,13 +41,11 @@ def scrape_livesportsontv():
         if ev.get("league") != "MLB":
             continue
 
-        # parse the UTC ISO date
-        dt = datetime.fromisoformat(ev["date"].replace("Z", ""))
+        dt = datetime.fromisoformat(ev["date"].replace("Z",""))
         start_time = dt.isoformat()
 
-        # extract the first channel shortname
         channels = ev.get("channels", [])
-        chan = channels[0]["shortname"] if channels else None
+        chan = channels[0].get("shortname") if channels else None
 
         tv_listings.append({
             "league":     ev["league"],
@@ -41,7 +55,6 @@ def scrape_livesportsontv():
             "channel":    chan
         })
 
-    # write result
     os.makedirs("data", exist_ok=True)
     with open("data/raw_tv.json", "w") as f:
         json.dump(tv_listings, f, indent=2)
@@ -49,5 +62,5 @@ def scrape_livesportsontv():
     return tv_listings
 
 if __name__ == "__main__":
-    listings = scrape_livesportsontv()
-    print(f"Extracted {len(listings)} TV listings")
+    lst = scrape_livesportsontv()
+    print(f"Extracted {len(lst)} TV listings")
