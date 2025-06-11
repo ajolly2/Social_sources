@@ -1,71 +1,63 @@
 #!/usr/bin/env python3
 import requests
-from bs4 import BeautifulSoup
 import json
+import argparse
 import datetime
+from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.livesportsontv.com"
 
-def scrape_league(league_slug):
-    """
-    Scrape the schedule + broadcast channels for a single league page,
-    by pulling data out of the __NEXT_DATA__ JSON blob.
-    """
+def fetch_league_schedule(league_slug: str):
     url = f"{BASE_URL}/league/{league_slug}"
     resp = requests.get(url)
     resp.raise_for_status()
 
-    # extract the Next.js JSON blob
+    # find the Next.js data blob
     soup = BeautifulSoup(resp.text, "html.parser")
-    script = soup.find("script", id="__NEXT_DATA__")
-    if not script:
-        raise RuntimeError(f"{league_slug.upper()} JSON data not found on page")
+    blob = soup.find("script", id="__NEXT_DATA__")
+    if not blob:
+        raise RuntimeError(f"No JSON data found on /league/{league_slug}")
 
-    data = json.loads(script.string)
-    # drill into the pageProps -> events
-    try:
-        events = data["props"]["pageProps"]["events"]
-    except KeyError:
-        raise RuntimeError(f"{league_slug.upper()} events not found in JSON")
-
+    data = json.loads(blob.string)
+    events = data["props"]["pageProps"].get("events", [])
     out = []
+
     for ev in events:
-        # skip any hidden/dontshow entries
-        if ev.get("classNames") and "dontshow" in ev["classNames"]:
+        # skip hidden/dontshow
+        if "dontshow" in ev.get("classNames", []):
             continue
 
-        info = ev.get("event", ev).get("event--wrapp", ev).get("matchInfo") or ev.get("event")
-        # date/time
-        dt_block = ev.get("event__info", ev).get("info", {}).get("time", {})
-        date_str = dt_block.get("date")  # e.g. {"b": "11", "span": "Jun"}
-        time_str = dt_block.get("time")  # e.g. "9:00 PM"
-        if date_str and time_str:
-            day = int(date_str["b"])
-            mon = date_str["span"]
-            # assume current year
-            dt = datetime.datetime.strptime(f"{day} {mon} {datetime.datetime.now().year} {time_str}", "%d %b %Y %I:%M %p")
-        else:
-            dt = None
+        # date + time
+        info = ev.get("event__info", {}).get("time", {})
+        date_obj = info.get("date")  # {"b":"11","span":"Jun"}
+        time_str = info.get("time")  # "9:00 PM"
+        dt = None
+        if date_obj and time_str:
+            day = int(date_obj["b"])
+            mon = date_obj["span"]
+            year = datetime.datetime.now().year
+            dt = datetime.datetime.strptime(
+                f"{day} {mon} {year} {time_str}",
+                "%d %b %Y %I:%M %p"
+            ).isoformat()
 
         # teams
-        teams = ev.get("event__matchInfo", ev).get("matchInfo", {})
-        home = teams.get("participant", [{}])[0].get("text") if teams.get("participant") else None
-        away = teams.get("participant", [{}])[1].get("text") if teams.get("participant") and len(teams["participant"])>1 else None
+        match = ev.get("event__matchInfo", {}).get("matchInfo", {})
+        parts = match.get("participant", [])
+        home = parts[0].get("text") if len(parts) > 0 else None
+        away = parts[1].get("text") if len(parts) > 1 else None
 
         # channels
-        tags = ev.get("event__tags", ev).get("tags", [])
+        tags = ev.get("event__tags", {}).get("tags", [])
         channels = []
-        for tag in tags:
-            text = tag.get("text") or tag.get("channel-text")
-            href = tag.get("href") or tag.get("link")
-            if text:
-                channels.append({
-                    "name": text,
-                    "link": href
-                })
+        for t in tags:
+            name = t.get("text") or t.get("channel-text")
+            link = t.get("href") or t.get("link")
+            if name:
+                channels.append({"name": name, "link": link})
 
         out.append({
-            "datetime": dt.isoformat() if dt else None,
+            "datetime": dt,
             "home": home,
             "away": away,
             "channels": channels
@@ -74,12 +66,11 @@ def scrape_league(league_slug):
     return out
 
 def main():
-    import argparse
-    parser = argparse.ArgumentParser(description="Scrape LiveSportsOnTV league schedules")
-    parser.add_argument("league", help="league slug (e.g. wnba, mlb, nfl)")
-    args = parser.parse_args()
+    p = argparse.ArgumentParser(description="Scrape LiveSportsOnTV league schedules")
+    p.add_argument("league", help="league slug (e.g. wnba, nfl, nba, mlb, etc.)")
+    args = p.parse_args()
 
-    schedule = scrape_league(args.league)
+    schedule = fetch_league_schedule(args.league)
     print(json.dumps(schedule, indent=2))
 
 if __name__ == "__main__":
