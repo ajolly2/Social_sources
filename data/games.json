@@ -1,16 +1,6 @@
 [
   {
     "league": "MLB",
-    "home": "Philadelphia Phillies",
-    "away": "Chicago Cubs",
-    "start_time": "2025-06-10T22:45:00",
-    "score_home": "4",
-    "score_away": "8",
-    "status": "LIVE",
-    "channel": null
-  },
-  {
-    "league": "MLB",
     "home": "Boston Red Sox",
     "away": "Tampa Bay Rays",
     "start_time": "2025-06-10T23:10:00",
@@ -55,7 +45,7 @@
     "away": "Texas Rangers",
     "start_time": "2025-06-10T23:40:00",
     "score_home": "4",
-    "score_away": "10",
+    "score_away": "11",
     "status": "LIVE",
     "channel": null
   },
@@ -64,7 +54,7 @@
     "home": "St.Louis Cardinals",
     "away": "Toronto Blue Jays",
     "start_time": "2025-06-10T23:45:00",
-    "score_home": "4",
+    "score_home": "6",
     "score_away": "8",
     "status": "LIVE",
     "channel": null
@@ -84,7 +74,7 @@
     "home": "Colorado Rockies",
     "away": "San Francisco Giants",
     "start_time": "2025-06-11T00:40:00",
-    "score_home": "1",
+    "score_home": "2",
     "score_away": "1",
     "status": "LIVE",
     "channel": null
