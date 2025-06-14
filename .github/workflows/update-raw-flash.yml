@@ -14,9 +14,7 @@ jobs:
       - name: Checkout Pages branch
         uses: actions/checkout@v3
         with:
-          # If your Pages publishes from 'gh-pages', use that; 
-          # otherwise, if it publishes from 'main', set ref: 'main'
-          ref: gh-pages
+          ref: main
 
       - name: Fetch live FlashLive JSON
         run: |
@@ -28,5 +26,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/raw_flash.json
-          git commit -m "Automated update of raw_flash.json" || echo "No changes"
-          git push origin gh-pages
+          git commit -m "Automated update of raw_flash.json" || echo "No changes to commit"
+          git push origin main
