@@ -16,20 +16,33 @@ jobs:
       - name: Fetch live FlashLive API
         run: |
           mkdir -p data
-          # Overwrite with actual live API JSON (it has `games`)
-          curl -s https://api.flashlive.io/raw_flash.json \
-            -o data/raw_flash.json
+          echo "Fetching raw_flash.json from FlashLive..."
+          # retry up to 3 times with backoff, but never fail the job completely
+          for i in 1 2 3; do
+            if curl -sS https://api.flashlive.io/raw_flash.json -o data/raw_flash.json; then
+              echo "✅ Fetched raw_flash.json"
+              break
+            else
+              echo "⚠️ Attempt $i failed, retrying..."
+              sleep $((i * 5))
+            fi
+          done || echo "❌ All retries failed—continuing with last known data"
 
       - name: Generate MLB-only payload
         run: |
-          # Take only MLB games from the freshly-fetched API payload
-          jq '{ DATA: [ .games[] | select(.league=="MLB") ] }' \
-            data/raw_flash.json > data/flash_mlb_payload.json
+          echo "Generating flash_mlb_payload.json"
+          # If raw_flash.json exists, filter it, otherwise create an empty structure
+          if [ -s data/raw_flash.json ]; then
+            jq '{ DATA: [ .games[] | select(.league=="MLB") ] }' data/raw_flash.json \
+              > data/flash_mlb_payload.json
+          else
+            echo '{"DATA":[]}' > data/flash_mlb_payload.json
+          fi
 
-      - name: Commit & push
+      - name: Commit & push JSON
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/raw_flash.json data/flash_mlb_payload.json
-          git commit -m "⏱️ Live update raw_flash & MLB payload" || echo "No changes"
+          git commit -m "⏱️ Live update raw_flash & MLB payload" || echo "No changes to commit"
           git push origin main
