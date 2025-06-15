@@ -8,6 +8,7 @@ on:
 jobs:
   update-json:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -17,21 +18,24 @@ jobs:
         run: |
           mkdir -p data
           echo "Fetching raw_flash.json from FlashLive..."
-          # retry up to 3 times with backoff, but never fail the job completely
+          success=false
           for i in 1 2 3; do
             if curl -sS https://api.flashlive.io/raw_flash.json -o data/raw_flash.json; then
               echo "✅ Fetched raw_flash.json"
+              success=true
               break
             else
-              echo "⚠️ Attempt $i failed, retrying..."
+              echo "⚠️ Attempt $i failed, retrying in $((i * 5))s..."
               sleep $((i * 5))
             fi
-          done || echo "❌ All retries failed—continuing with last known data"
+          done
+          if [ "$success" != "true" ]; then
+            echo "❌ All retries failed—continuing with last known data"
+          fi
 
       - name: Generate MLB-only payload
         run: |
           echo "Generating flash_mlb_payload.json"
-          # If raw_flash.json exists, filter it, otherwise create an empty structure
           if [ -s data/raw_flash.json ]; then
             jq '{ DATA: [ .games[] | select(.league=="MLB") ] }' data/raw_flash.json \
               > data/flash_mlb_payload.json
