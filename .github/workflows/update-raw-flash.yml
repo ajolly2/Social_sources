@@ -1,36 +1,35 @@
-name: Update raw_flash & MLB payload
+name: Update live API & MLB payload
 
 on:
   schedule:
-    # every minute
-    - cron: '* * * * *'
+    - cron: '* * * * *'      # every minute
   workflow_dispatch:
 
 jobs:
-  fetch-and-generate:
+  update-json:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
           ref: main
 
-      - name: Fetch live FlashLive JSON
+      - name: Fetch live FlashLive API
         run: |
           mkdir -p data
+          # Overwrite with actual live API JSON (it has `games`)
           curl -s https://api.flashlive.io/raw_flash.json \
             -o data/raw_flash.json
 
       - name: Generate MLB-only payload
         run: |
-          # filter out only MLB games into an array under DATA
-          jq '{ DATA: [ .games[] | select(.league == "MLB") ] }' \
+          # Take only MLB games from the freshly-fetched API payload
+          jq '{ DATA: [ .games[] | select(.league=="MLB") ] }' \
             data/raw_flash.json > data/flash_mlb_payload.json
 
-      - name: Commit & push JSON
+      - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/raw_flash.json data/flash_mlb_payload.json
-          git commit -m "Automated update of raw_flash & MLB payload" || echo "No changes"
+          git commit -m "⏱️ Live update raw_flash & MLB payload" || echo "No changes"
           git push origin main
